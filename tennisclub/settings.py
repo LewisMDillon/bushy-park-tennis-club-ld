@@ -33,6 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '8000-lewismdillo-bushyparkte-pvfidyjv91m.ws-eu102.gitpod.io',
     'bushy-park-tennis-club.herokuapp.com'
+    'bushy-park-tennis-club-896947b1504e.herokuapp.com'
 ]
 
 
