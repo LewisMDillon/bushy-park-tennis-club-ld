@@ -1,8 +1,10 @@
 {% extends 'website/base.html' %}
 {% block content %}
-<body>
-    <h1>Tennis Club Homepage</h1>
-    <h3>This was rendered from a template!</h3>
-    <p>You've really done it this time!</p>
-</body>
+    <h1>Tennis Club Homepagers</h1>
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+    <h2></h2>
 {% endblock content %}
