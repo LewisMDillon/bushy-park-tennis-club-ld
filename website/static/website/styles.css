@@ -10947,11 +10947,15 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("/static/img/header-bg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("/static/img/pxfuel.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+}
+header.masthead img {
+    filter: brightness(39%);
+    size: 0px;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
