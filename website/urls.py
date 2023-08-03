@@ -21,4 +21,5 @@ urlpatterns = [
         ),
     path('about', views.about, name='website-about'),
     path('index', views.index, name='website-index'),
+    path('new', views.new, name='website-new'),
 ]

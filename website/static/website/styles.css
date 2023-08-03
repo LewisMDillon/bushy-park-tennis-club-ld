@@ -10945,9 +10945,10 @@ p {
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
+  /* min-height: 100vh; */
   text-align: center;
   color: #fff;
-  background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("/static/img/pxfuel.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("/static/img/tennis-nets.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;

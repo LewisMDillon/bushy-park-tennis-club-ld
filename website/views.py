@@ -80,3 +80,7 @@ def about(request):
 
 def index(request):
     return render(request, 'website/index.html')
+
+
+def new(request):
+    return render(request, 'website/new.html')
