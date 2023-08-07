@@ -10,16 +10,16 @@ from django.views.generic import (
 from .models import Post
 
 
-def home(request):
+def news(request):
     context = {
         'posts': Post.objects.all()
     }
-    return render(request, 'website/home.html', context)
+    return render(request, 'website/news.html', context)
 
 
 class PostListView(ListView):
     model = Post
-    template_name = 'website/home.html'
+    template_name = 'website/news.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 3
@@ -82,5 +82,9 @@ def index(request):
     return render(request, 'website/index.html')
 
 
-def new(request):
-    return render(request, 'website/new.html')
+def home(request):
+    return render(request, 'website/home.html')
+
+
+def base(request):
+    return render(request, 'website/base.html')
