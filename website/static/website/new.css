@@ -230,14 +230,14 @@ a.article-title:hover {
     z-index: 1500;
   }
 
-  #news-primary {
+  /* #news-primary {
     color: #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("/static/img/pxfuel.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("https://res.cloudinary.com/lewismd/image/upload/v1691411346/logo_ffxgvb.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
-  }
+  } */
 
   #news-primary button {
     color: #fff;
@@ -245,14 +245,14 @@ a.article-title:hover {
     border-color: #126b73;
   }
 
-  #news-secondary-left {
+  /* #news-secondary-left {
     color: #fff;
     background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("/static/img/ball-on-netpost.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
-  }
+  } */
 
   #news-secondary-left button {
     color: #fff;
@@ -260,14 +260,14 @@ a.article-title:hover {
     border-color: #0e4f55;
   }
 
-  #news-secondary-right {
+  /* #news-secondary-right {
     color: #fff;
     background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("/static/img/tennis-player.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
-  }
+  } */
 
   #news-secondary-right button {
     color: #fff;

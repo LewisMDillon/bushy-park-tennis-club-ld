@@ -10,11 +10,14 @@ from django.views.generic import (
 from .models import Post
 
 
-def news(request):
+def home(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all(),
+        'latest_post': Post.objects.last(),
+        'second_last_post': Post.objects.filter().order_by('-pk')[1],
+        'third_last_post': Post.objects.filter().order_by('-pk')[2],
     }
-    return render(request, 'website/news.html', context)
+    return render(request, 'website/home.html', context)
 
 
 class PostListView(ListView):
@@ -80,10 +83,6 @@ def about(request):
 
 def index(request):
     return render(request, 'website/index.html')
-
-
-def home(request):
-    return render(request, 'website/home.html')
 
 
 def base(request):
