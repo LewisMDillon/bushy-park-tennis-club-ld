@@ -1,0 +1,16 @@
+{% extends 'website/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% for reservation in reservations %}
+        <article class="media content-section col-md-8">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ reservation.title }}</a>
+                    <small class="text-muted">{{ reservation.created_by }}</small>
+                    <small class="text-muted">Court Number {{ reservation.court_number }}</small>
+                    <small class="text-muted">On {{ reservation.reservation_time }}</small>
+                </div>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
