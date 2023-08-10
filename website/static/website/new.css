@@ -8,13 +8,35 @@
     flex-basis: auto;
     justify-content: flex-end;
     }
+
+  body {
+    margin-top: 53px;
+  }
+
+  #about-us {
+    font-size: 1.3rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#navbar {
+  background-color: #304f2a;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: white;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: #f1f5f7;
-    margin-top: 61px;
 }
 
 ul {
@@ -22,42 +44,60 @@ ul {
 }
 
 #logo {
-    color: #126b73;
+    color: #fff;
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: 600;
 }
 
 .nav-link {
-    color: #126b73;
+    color: #fff;
     font-size: larger;
 }
 
+.nav-link:hover {
+  color: rgb(161, 161, 161)
+}
+
 #hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("/static/img/tennis-nets.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("/static/img/tennis-nets-cropped.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
-    min-height: 90vh;
+    min-height: 95vh;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#hero button {
+#hero-button {
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
     margin-top: 0;
-    background-color: #1ca9b5;
-    border-color: #126b73;
+    background-color: #304f2a;
+    border-color: #fff;
 }
 
-#hero button:hover {
-    background-color: #126b73;
+.hero-button {
+  background-color: #304f2a;
+  color: whitesmoke;
+  text-decoration: none;
+  border: 2px solid #263e21;
+  margin-top: 5rem;
+  padding: 1rem 1.875rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-button:hover {
+    background-color: #263e21;
+    color: rgb(161, 161, 161)
 }
 
 #main-heading {
@@ -150,15 +190,19 @@ a.article-title:hover {
 }
 
 /* ABOUT US */
-#about-us p{
-    /* font-size: 1.2rem; */
+#about-us {
+  scroll-margin-top: 60px;
 }
 
 /* CLUB FEATURES */
 .feature-icon i {
-    color: #126b73;
+    color: #304f2a;
     font-size: 4rem;
     text-align: center;
+}
+
+.features-text {
+  font-size: 1.2rem;
 }
 
 /* NEWS JUMBOTRONS */
@@ -245,8 +289,8 @@ a.article-title:hover {
 
   #news-primary button {
     color: #fff;
-    background-color: #1ca9b5;
-    border-color: #126b73;
+    background-color: #304f2a;
+    border-color: #263e21;
   }
 
   /* #news-secondary-left {
@@ -260,8 +304,8 @@ a.article-title:hover {
 
   #news-secondary-left button {
     color: #fff;
-    background-color: #126b73;
-    border-color: #0e4f55;
+    background-color: #304f2a;
+    border-color: #263e21;
   }
 
   /* #news-secondary-right {
@@ -275,8 +319,8 @@ a.article-title:hover {
 
   #news-secondary-right button {
     color: #fff;
-    background-color: #126b73;
-    border-color: #0e4f55;
+    background-color: #304f2a;
+    border-color: #263e21;
   }
 
   /* BOOKING FORM */
