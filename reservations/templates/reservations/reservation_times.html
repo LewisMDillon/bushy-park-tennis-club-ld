@@ -1,9 +1,25 @@
 {% extends 'website/base.html' %}
 {% load crispy_forms_tags %}
+
 {% block content %}
-    <h1 class="m-4">Reservation List</h1>
-    {% for reservation in reservations %} 
-        {% if reservation.created_by.username == "TennisGuy21" %}
+<h1>Booking Form</h1>
+<form action="">
+    <label for="date_chosen">Date:</label><br>
+    <input type="date" id="date_chosen" name="date_chosen"><br>
+    <input type="submit">
+</form>
+
+
+<div>
+    <form action="">
+        {% with date_chosen="August 6" %}
+            <h1>Your chosen date: {{ date_chosen }}</h1>
+        {% endwith %}
+    </form>
+
+    <h1>Available Times</h1>
+    {% for reservation in reservations %}
+        {% if reservation.date == date_chosen %}
             <article class="media content-section col-md-8">
                 <div class="media-body">
                     <div class="article-metadata">
@@ -17,4 +33,5 @@
             </article>
         {% endif %}
     {% endfor %}
-{% endblock content %}
+</div>
+{% endblock %}
