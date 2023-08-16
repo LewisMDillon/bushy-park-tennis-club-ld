@@ -1,0 +1,15 @@
+{% extends 'website/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1 class="my-5">Use the form below to make a booking</h1>
+<form action="../new/" method="GET" id="dateForm" class="col-md-3 mx-auto my-5">
+    {% csrf_token %}
+    <div>
+        <input class="picker" type="date" name="date" id="date-picker" min='1899-01-01' max='2000-13-13'>
+        <input type="submit" value="Submit">
+    </div>
+</form>
+<hr>
+
+{% endblock %}

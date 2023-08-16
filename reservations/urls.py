@@ -11,4 +11,5 @@ urlpatterns = [
     path('', ReservationListView.as_view(), name='reservation-list'),
     path('new/', ReservationCreateView.as_view(), name='reservation-create'),
     path('times/', ReservationTimesView.as_view(), name='reservation-times'),
+    path('date/', views.date_form, name='reservation-date'),
 ]

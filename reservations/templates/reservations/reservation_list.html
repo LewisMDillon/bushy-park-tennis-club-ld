@@ -3,7 +3,7 @@
 {% block content %}
     <h1 class="m-4">Reservation List</h1>
     {% for reservation in reservations %} 
-        {% if reservation.created_by.username == "TennisGuy21" %}
+        {% if reservation.created_by.username != "Te" %}
             <article class="media content-section col-md-8">
                 <div class="media-body">
                     <div class="article-metadata">

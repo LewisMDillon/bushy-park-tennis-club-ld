@@ -10,27 +10,10 @@
 </form>
 
 
-<div>
-    <form action="">
-        {% with date_chosen="August 6" %}
-            <h1>Your chosen date: {{ date_chosen }}</h1>
-        {% endwith %}
-    </form>
-
     <h1>Available Times</h1>
     {% for reservation in reservations %}
-        {% if reservation.date == date_chosen %}
-            <article class="media content-section col-md-8">
-                <div class="media-body">
-                    <div class="article-metadata">
-                        <a class="mr-2" href="#">{{ reservation.title }}</a>
-                        <small class="text-muted">{{ reservation.created_by }}</small>
-                        <small class="text-muted">Court Number {{ reservation.court_number }}</small>
-                        <small class="text-muted">On {{ reservation.date }}</small>
-                        <small class="text-muted"> At {{ reservation.time }}</small>
-                    </div>
-                </div>
-            </article>
+        {% if reservation.date|date:"M d, Y" == "Aug 09, 2023" %}
+            <h2>{{ reservation.date }}</h2>
         {% endif %}
     {% endfor %}
 </div>

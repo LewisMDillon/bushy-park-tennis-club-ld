@@ -1,44 +1,9 @@
 {% extends 'website/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <form id="regForm" action="">
-
-        <h1>Book A Court</h1>
-
-        <!-- One "tab" for each step in the form: -->
-        <div class="tab">Which day would you like to play?
-            <p><input type="date" oninput="this.className = ''"></p>
-        </div>
-
-        <div class="tab">Grass or Clay court?
-            <input type="radio" oninput="this.className = ''" id="grass" name="court_type" value="grass">
-            <label for="grass">Grass</label><br>
-            <input type="radio" oninput="this.className = ''" id="clay" name="court_type" value="clay">
-            <label for="clay">Clay</label><br>
-        </div>
-
-        <div class="tab">Please choose from the available times:
-            <p><input type="time" oninput="this.className = ''"></p>
-        </div>
-
-        <div style="overflow:auto;">
-            <!-- <div style="float:right;"> -->
-                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-            </div>
-        </div>
-
-        <!-- Circles which indicates the steps of the form: -->
-        <div style="text-align:center;margin-top:40px;">
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-        </div>
-
-    </form>
-
-
+<hr>
+<h2 id="form-url" hidden>{{ request.get_full_path }}</h2>
+<hr>
     <div class="content-section col-md-6 mx-auto my-5">
         <form method="POST">
             {% csrf_token %}
