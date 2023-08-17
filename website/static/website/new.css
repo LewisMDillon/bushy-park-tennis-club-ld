@@ -430,3 +430,17 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   color: transparent;
   background: transparent;
 }
+
+/* INDICATOR CIRCLES */
+
+#circle-red {
+  color: red;
+}
+
+#circle-orange {
+  color: orange;
+}
+
+#circle-green {
+  color: green;
+}

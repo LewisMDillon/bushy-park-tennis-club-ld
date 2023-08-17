@@ -30,8 +30,7 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        date = self.request.POST.get("date")
-        context['date'] = date
+        context["reservations"] = Reservation.objects.all()
         return context
 
     def form_valid(self, form):

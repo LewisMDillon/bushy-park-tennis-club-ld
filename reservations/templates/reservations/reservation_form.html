@@ -2,18 +2,26 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <hr>
-<h2 id="form-url" hidden>{{ request.get_full_path }}</h2>
+<p id="form-url" hidden>{{ request.get_full_path }}</p>
 <hr>
-    <div class="content-section col-md-6 mx-auto my-5">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">New Court Booking</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Post</button>
-            </div>
-        </form>
-    </div>
+<h1 id="test">Regular Title</h1>
+<div class="content-section col-md-6 mx-auto my-5">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">New Court Booking</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Post</button>
+        </div>
+    </form>
+</div>
+
+<div>
+    <h1 class="m-4" id="blob">Reservation List</h1>
+    {% for reservation in reservations %}
+            <p class="reservation-dates">{{reservation.date|date:'Y-m-d'}}-{{ reservation.timeslot }}-{{ reservation.court_number }}</p>
+    {% endfor %}
+</div>
 {% endblock content %}

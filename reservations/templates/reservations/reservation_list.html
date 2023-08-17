@@ -9,7 +9,7 @@
                     <div class="article-metadata">
                         <a class="mr-2" href="#">{{ reservation.title }}</a>
                         <small class="text-muted">{{ reservation.created_by }}</small>
-                        <small class="text-muted">Court Number {{ reservation.court_number }}</small>
+                        <small class="text-muted">Court Number {{ reservation.get_court_number_display }}</small>
                         <small class="text-muted">On {{ reservation.date }}</small>
                         <small class="text-muted"> At {{ reservation.get_timeslot_display }}</small>
                     </div>
