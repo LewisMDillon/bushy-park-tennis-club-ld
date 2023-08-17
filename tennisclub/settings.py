@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-lewismdillo-bushyparkte-divi0h8scca.ws-eu103.gitpod.io',
+    '8000-lewismdillo-bushyparkte-divi0h8scca.ws-eu104.gitpod.io',
     'bushy-park-tennis-club.herokuapp.com',
     'bushy-park-tennis-club-896947b1504e.herokuapp.com',
 ]

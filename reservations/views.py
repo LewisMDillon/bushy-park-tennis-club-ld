@@ -26,7 +26,7 @@ class ReservationTimesView(ListView):
 
 class ReservationCreateView(LoginRequiredMixin, CreateView):
     model = Reservation
-    fields = ["date", 'time', 'court_number']
+    fields = ["date", 'timeslot', 'court_number']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

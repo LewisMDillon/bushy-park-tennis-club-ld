@@ -11,7 +11,7 @@
                         <small class="text-muted">{{ reservation.created_by }}</small>
                         <small class="text-muted">Court Number {{ reservation.court_number }}</small>
                         <small class="text-muted">On {{ reservation.date }}</small>
-                        <small class="text-muted"> At {{ reservation.time }}</small>
+                        <small class="text-muted"> At {{ reservation.get_timeslot_display }}</small>
                     </div>
                 </div>
             </article>
