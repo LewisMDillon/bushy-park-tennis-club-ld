@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <h1 class="m-4">Reservation List</h1>
+    <a href="{% url 'reservation-date' %}">New Booking</a>
     {% for reservation in reservations %} 
         {% if reservation.created_by.username != "Te" %}
             <article class="media content-section col-md-8">

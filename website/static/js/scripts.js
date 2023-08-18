@@ -45,7 +45,13 @@ courtList11 = []
 for (let reservation of reservationList) {
     let fullString = reservation.innerText
     let date = fullString.substr(0, 10);
-    let timeslot = fullString.slice(11, 12)
+    let timeslot = ""
+    if (fullString.length > 14) {
+        timeslot = fullString.slice(11,13)
+    }
+    else {
+        timeslot = fullString.slice(11, 12)
+    }
     if (date == userDate) {
         if (timeslot == "0") {
             courtList0.push(timeslot)
@@ -104,7 +110,13 @@ for (let reservation of reservationList) {
 for (let reservation of reservationList) {
         let fullString = reservation.innerText
         let date = fullString.substr(0, 10);
-        let timeslot = fullString.slice(11, 12)
+        let timeslot = ""
+        if (fullString.length > 14) {
+            timeslot = fullString.slice(11,13)
+        }
+        else {
+            timeslot = fullString.slice(11, 12)
+        }
         if (date == userDate) {
             timeList.push(timeslot);
         }
@@ -127,7 +139,6 @@ let reservationCount = timeList.reduce(function (
 function AvailabilityCheck (timeslot) {
     let allTimes = document.getElementById("id_timeslot").children
     let targetTime = allTimes.item(timeslot + 1)
-    let courtField = document.getElementById("id_court_number")
 
     if (reservationCount[timeslot] >= 9) {
         targetTime.disabled = true;
@@ -161,40 +172,40 @@ function pickCourt() {
         bookings = courtList1.length
     }
     if (selectedTime == "11:00") {
-        let bookings = courtList2.length
+        bookings = courtList2.length
     }
     if (selectedTime == "12:00") {
         bookings = courtList3.length
     }
     if (selectedTime == "13:00") {
-        let bookings = courtList4.length
+        bookings = courtList4.length
     }
     if (selectedTime == "14:00") {
-        let bookings = courtList5.length
+        bookings = courtList5.length
     }
     if (selectedTime == "15:00") {
-        let bookings = courtList6.length
+        bookings = courtList6.length
     }
     if (selectedTime == "16:00") {
-        let bookings = courtList7.length
+        bookings = courtList7.length
     }
     if (selectedTime == "17:00") {
-        let bookings = courtList8.length
+        bookings = courtList8.length
     }
     if (selectedTime == "18:00") {
-        let bookings = courtList9.length
+        bookings = courtList9.length
     }
     if (selectedTime == "19:00") {
-        let bookings = courtList10.length
+        bookings = courtList10.length
     }
     if (selectedTime == "20:00") {
-        let bookings = courtList11.length
+        bookings = courtList11.length
     }
 
     let courtField = document.getElementById("id_court_number")
     courtField.value = parseInt(bookings)
 
-    console.log("pickCourt Function Executed")
     console.log(selectedTime)
     console.log(`There are ${bookings} reservations at that time`)
+    console.log(`Therefore the reservation will be on Court ${bookings + 1}`)
 }
