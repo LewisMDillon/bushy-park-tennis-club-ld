@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django import forms
 from django.views.generic import (
     ListView,
     DetailView,
@@ -26,7 +27,7 @@ class ReservationTimesView(ListView):
 
 class ReservationCreateView(LoginRequiredMixin, CreateView):
     model = Reservation
-    fields = ["date", 'timeslot', 'court_number']
+    fields = ['date', 'timeslot', 'court_number']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -36,6 +37,12 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.created_by = self.request.user
         return super().form_valid(form)
+    
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['court_number'].widget = forms.HiddenInput()
+        form.fields['date'].widget = forms.HiddenInput()
+        return form
 
 
 def date_form(request):
