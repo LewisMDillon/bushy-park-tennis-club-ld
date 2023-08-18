@@ -143,11 +143,11 @@ function AvailabilityCheck (timeslot) {
     if (reservationCount[timeslot] >= 9) {
         targetTime.disabled = true;
         targetTime.style.color = "red"
-        targetTime.innerText += "-- Fully Booked"
+        targetTime.innerText += " -- Fully Booked "
     }
     else if (reservationCount[timeslot] >= 6) {
         targetTime.style.color = "orange"
-        targetTime.innerHTML = `${targetTime.innerHTML} -- Limited Availability`
+        targetTime.innerHTML = `${targetTime.innerHTML} -- Limited Availability `
     }
 }
 

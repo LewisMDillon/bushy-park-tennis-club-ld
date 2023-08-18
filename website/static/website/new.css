@@ -341,18 +341,86 @@ a.article-title:hover {
   background-size: cover;
 }
 
+/* -------------- FOOTER ----------------- */
+
+#footer-container {
+  background-color: #304f2a;
+  color: #fff;
+  max-width: 100%;
+}
+
+#footer-container-secondary {
+  padding-bottom: 0!important;
+  max-width: 75%;
+}
+
+#footer-container-last {
+  align-items: center;
+  margin-bottom: 0!important;
+}
+
+#social-icons li {
+  font-size: 2rem;
+}
+
 /* -------------- DATE FORM ---------------*/
 
-input {
+#date-form-container {
+  min-width: 300px;
+}
+
+#dateForm {
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: row;
+  width: 320px;
+  height: 260px;
+  align-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #f4f4f4
+}
+
+#date-field-container {
+  display: flex;
+  justify-content: center;
+}
+
+#date-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#date-button {
+  color: white;
+  border-color: #263e21;
+  background-color: #304f2a;
+  padding: 8px 32px;
+}
+
+#date-button:hover {
+  background-color: #507948;
+}
+
+#date-button:focus {
+  box-shadow: 0 0 0 0.25rem rgb(111 111 111 / 50%)
+}
+
+/* input {
   padding: 10px;
   width: 100%;
   font-size: 17px;
   font-family: Raleway;
   border: 1px solid #aaaaaa;
-}
+} */
 
 input.picker[type="date"] {
   position: relative;
+  padding: 10px;
+  /* width: 100%; */
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
 }
 
 input.picker[type="date"]::-webkit-calendar-picker-indicator {
@@ -368,9 +436,62 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
 
 /* ---------- TIME FORM -------------*/
 
+#time-form-container {
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 260px;
+  align-items: center;
+  border-radius: 20px;
+  background: #f4f4f4;
+  justify-content: center;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+#time-field-container {
+  display: flex;
+  justify-content: center;
+}
+
+#id_timeslot {
+  padding: 10px;
+  width: 156px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+#id_timeslot option {
+}
+
 .reservation-dates {
   color: transparent;
   font-size: 0em;
   margin: 0;
+  display: none;
+}
+
+#book-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#book-button {
+  color: white;
+  border-color: #263e21;
+  background-color: #304f2a;
+  padding: 8px 32px;
+}
+
+#book-button:hover {
+  background-color: #507948;
+}
+
+#book-button:focus {
+  box-shadow: 0 0 0 0.25rem rgb(111 111 111 / 50%)
+}
+
+#div_id_timeslot label {
   display: none;
 }

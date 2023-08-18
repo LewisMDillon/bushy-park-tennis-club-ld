@@ -2,14 +2,19 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1 class="my-5">Use the form below to make a booking</h1>
-<form action="../new/" method="GET" id="dateForm" class="col-md-3 mx-auto my-5">
+<h1 class="mt-5 text-center">Court Reservation</h1>
+<h3 class="text-center">Use the form below to reserve a court</h3>
+<form action="../new/" method="GET" id="dateForm" class="justify-content-center mx-auto mt-5 shadow">
     {% csrf_token %}
-    <div>
-        <input class="picker" type="date" name="date" id="date-picker" min='1899-01-01' max='2000-13-13'>
-        <input type="submit" value="Next">
+    <div class="col-4" id="date-form-container">
+        <h4 class="text-center">Please select a date</h4>
+        <div id="date-field-container">
+            <input class="picker" type="date" name="date" id="date-picker" min='1899-01-01' max='2000-13-13' required>
+        </div>
+        <div id="date-button-container">
+            <input class="btn btn-outline-info" type="submit" value="Next" id="date-button">
+        </div>
     </div>
 </form>
-<hr>
 
 {% endblock %}
