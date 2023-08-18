@@ -1,42 +1,32 @@
-function printHello() {
-    console.log('the javascript function ran!')
-}
+// function runTest() {
+//     console.log('the javascript function ran!')
+// }
 
-printHello()
+// runTest()
 
 
 
 //-------------RESERVATION FORM-------------
 
-// AUTOFILL DATE & HIDE DATEFIELD
+// AUTOFILL DATEFIELD
 let formUrl = document.getElementById("form-url")
 let newURL = formUrl.baseURI
-console.log(newURL)
 
 var userDate = newURL.slice(-10);
-console.log(userDate)
 
 let dateField = document.getElementById("id_date")
 dateField.value = userDate
-
-let dateSection = document.getElementById("div_id_date")
-dateSection.style.display = "none"
 
 
 // GET RESERVATION LIST
 let reservationList = document.getElementsByClassName("reservation-dates")
 
-// HIDE RESERVATION LIST
-// for (let reservation of reservationList) {
-//     reservation.style.display = 'none';
-//     }
 
 // CALCULATE COURT AVAILABILITY
-console.log("below is the userDate")
-console.log(userDate)
+
+console.log(`The user's chosen date is: ${userDate}`)
 
 timeList = []
-courtList = []
 
 courtList0 = []
 courtList1 = []
@@ -51,6 +41,7 @@ courtList9 = []
 courtList10 = []
 courtList11 = []
 
+// SORT RESERVATIONS BY THEIR RESPECTIVE TIMESLOTS
 for (let reservation of reservationList) {
     let fullString = reservation.innerText
     let date = fullString.substr(0, 10);
@@ -94,27 +85,28 @@ for (let reservation of reservationList) {
         }
     }
 }
- console.log(`courtList0 = ${courtList0}`)
- console.log(`courtList1 = ${courtList1}`)
- console.log(`courtList2 = ${courtList2}`)
- console.log(`courtList3 = ${courtList3}`)
- console.log(`courtList4 = ${courtList4}`)
- console.log(`courtList5 = ${courtList5}`)
- console.log(`courtList6 = ${courtList6}`)
- console.log(`courtList7 = ${courtList7}`)
- console.log(`courtList8 = ${courtList8}`)
- console.log(`courtList9 = ${courtList9}`)
- console.log(`courtList10 = ${courtList10}`)
- console.log(`courtList11 = ${courtList11}`)
 
+// CONSOLE LOG THE TIME SLOT LISTS & COUNT RESERVATIONS
+ console.log(`9:00 = ${courtList0} - ${courtList0.length} reservations`)
+ console.log(`10:00 = ${courtList1} - ${courtList1.length} reservations`)
+ console.log(`11:00 = ${courtList2} - ${courtList2.length} reservations`)
+ console.log(`12:00 = ${courtList3} - ${courtList3.length} reservations`)
+ console.log(`13:00 = ${courtList4} - ${courtList4.length} reservations`)
+ console.log(`14:00 = ${courtList5} - ${courtList5.length} reservations`)
+ console.log(`15:00 = ${courtList6} - ${courtList6.length} reservations`)
+ console.log(`16:00 = ${courtList7} - ${courtList7.length} reservations`)
+ console.log(`17:00 = ${courtList8} - ${courtList8.length} reservations`)
+ console.log(`18:00 = ${courtList9} - ${courtList9.length} reservations`)
+ console.log(`19:00 = ${courtList10} - ${courtList10.length} reservations`)
+ console.log(`20:00 = ${courtList11} - ${courtList11.length} reservations`)
+
+ 
 for (let reservation of reservationList) {
         let fullString = reservation.innerText
         let date = fullString.substr(0, 10);
         let timeslot = fullString.slice(11, 12)
-        let court = fullString.slice(fullString.length - 1)
         if (date == userDate) {
             timeList.push(timeslot);
-            courtList.push(court)
         }
     }
 
@@ -131,7 +123,7 @@ let reservationCount = timeList.reduce(function (
 {});
 
 
-// TIMESLOT CHECKER
+// AVAILABILITY CHECKER
 function AvailabilityCheck (timeslot) {
     let allTimes = document.getElementById("id_timeslot").children
     let targetTime = allTimes.item(timeslot + 1)
@@ -152,7 +144,7 @@ for (let i = 0; i <= 11; i++) {
     AvailabilityCheck(i)
 }
 
-//COURT PICKER
+//AUTO COURT PICKER
 let timeField = document.getElementById("id_timeslot")
 
 timeField.addEventListener("change", pickCourt);
@@ -204,16 +196,5 @@ function pickCourt() {
 
     console.log("pickCourt Function Executed")
     console.log(selectedTime)
-    console.log(`There are ${bookings} bookings at that time`)
+    console.log(`There are ${bookings} reservations at that time`)
 }
-
-
-
-
-
-console.log("below is the court list")
-console.log(courtList)
-console.log("below is the time list")
-console.log(timeList)
-console.log("below is the reservation count")
-// courtPicker(courtList)

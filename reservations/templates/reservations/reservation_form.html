@@ -19,9 +19,8 @@
 </div>
 
 <div>
-    <h1 class="m-4" id="blob">Reservation List</h1>
     {% for reservation in reservations %}
-            <p class="reservation-dates">{{reservation.date|date:'Y-m-d'}}-{{ reservation.timeslot }}-{{ reservation.court_number }}</p>
+            <p class="reservation-dates" hidden>{{reservation.date|date:'Y-m-d'}}-{{ reservation.timeslot }}-{{ reservation.court_number }}</p>
     {% endfor %}
 </div>
 {% endblock content %}

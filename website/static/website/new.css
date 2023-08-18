@@ -278,14 +278,7 @@ a.article-title:hover {
     z-index: 1500;
   }
 
-  /* #news-primary {
-    color: #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("https://res.cloudinary.com/lewismd/image/upload/v1691411346/logo_ffxgvb.jpg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: cover;
-  } */
+  /* ---------- NEWS JUMBOTRONS --------------*/
 
   #news-primary button {
     color: #fff;
@@ -293,14 +286,6 @@ a.article-title:hover {
     border-color: #263e21;
   }
 
-  /* #news-secondary-left {
-    color: #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("/static/img/ball-on-netpost.jpg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: cover;
-  } */
 
   #news-secondary-left button {
     color: #fff;
@@ -308,14 +293,6 @@ a.article-title:hover {
     border-color: #263e21;
   }
 
-  /* #news-secondary-right {
-    color: #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("/static/img/tennis-player.jpg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: cover;
-  } */
 
   #news-secondary-right button {
     color: #fff;
@@ -323,59 +300,9 @@ a.article-title:hover {
     border-color: #263e21;
   }
 
-  /* BOOKING FORM */
-  /* Style the form */
-#regForm {
-  background-color: #ffffff;
-  margin: 100px auto;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
-}
 
-/* Style the input fields */
-input {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
-}
+/* ----------- FEATURETTES --------------*/
 
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
-
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-/* Mark the active step: */
-.step.active {
-  opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #04AA6D;
-}
-
-
-/* FEATURETTE */
 .featurette-divider {
   margin: 5rem 0; /* Space out the Bootstrap <hr> more */
 }
@@ -414,7 +341,15 @@ input.invalid {
   background-size: cover;
 }
 
-/* DATE FORM */
+/* -------------- DATE FORM ---------------*/
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
 
 input.picker[type="date"] {
   position: relative;
@@ -431,16 +366,11 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   background: transparent;
 }
 
-/* INDICATOR CIRCLES */
+/* ---------- TIME FORM -------------*/
 
-#circle-red {
-  color: red;
-}
-
-#circle-orange {
-  color: orange;
-}
-
-#circle-green {
-  color: green;
+.reservation-dates {
+  color: transparent;
+  font-size: 0em;
+  margin: 0;
+  display: none;
 }
