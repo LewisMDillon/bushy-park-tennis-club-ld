@@ -17,6 +17,26 @@ class ReservationListView(ListView):
     template_name = 'reservations/reservation_list.html'
     context_object_name = 'reservations'
     ordering = ['-date_created']
+    # paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        title_search_input = self.request.GET.get('title-search') or ''
+        if title_search_input:
+            context['reservations'] = context['reservations'].filter(
+                title__istartswith=title_search_input
+            )
+        context['title_search_input'] = title_search_input
+
+        court_search_input = self.request.GET.get('court-search') or ''
+        if court_search_input:
+            context['reservations'] = context['reservations'].filter(
+                court_number__istartswith=court_search_input
+            )
+        context['court_search_input'] = court_search_input
+
+        return context
 
 
 class ReservationTimesView(ListView):

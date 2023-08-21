@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1 class="mt-5 text-center">Court Reservation</h1>
+<h1 class="text-center" id="date-form-heading">Court Reservation</h1>
 <h3 class="text-center">Use the form below to reserve a court</h3>
 <form action="../new/" method="GET" id="dateForm" class="justify-content-center mx-auto mt-5 shadow">
     {% csrf_token %}

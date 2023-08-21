@@ -3,6 +3,16 @@
 {% block content %}
     <h1 class="m-4">Reservation List</h1>
     <a href="{% url 'reservation-date' %}">New Booking</a>
+
+    <form method="GET">
+        <input type="text" name="title-search" value="{{ title_search_input }}">
+        <input type="submit" value="Title Search">
+    </form>
+    <form method="GET">
+        <input type="number" name="court-search" value="{{ court_number_search_input }}">
+        <input type="submit" value="Court Search">
+    </form>
+
     {% for reservation in reservations %} 
         {% if reservation.created_by.username != "Te" %}
             <article class="media content-section col-md-8">
@@ -18,6 +28,7 @@
             </article>
         {% endif %}
     {% endfor %}
+
     <div id="page-button-container">
         {% if is_paginated %}
         
