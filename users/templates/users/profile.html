@@ -1,7 +1,7 @@
 {% extends "website/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
+    <div id="profile-container">
       <div class="media">
         {% if "default" in user.profile.image.url %}
             <img class="rounded-circle account-img" src="https://res.cloudinary.com/lewismd/image/upload/v1690812491/default_i27az4.jpg">
@@ -9,20 +9,26 @@
             <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
         {% endif %}    
         <div class="media-body">
-          <h2 class="account-heading">{{ user.username }}</h2>
-          <p class="text-secondary">{{ user.email }}</p>
+          <h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2>
+          <h3>Profile Info</h3>
+          <p>Username: {{ user.username }}</p>
+          <p>Email: {{ user.email }}</p>
         </div>
       </div>
-      <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Profile Info</legend>
-            {{ u_form|crispy }}
-            {{ p_form|crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Update</button>
-        </div>
-      </form>
+      <button class="btn btn-outline-secondary my-3" id="update-button">Edit Profile</button>
+      <div id="profile-form-container">
+        <form method="POST" enctype="multipart/form-data" id="update-form">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Edit Profile Details</legend>
+              {{ u_form|crispy }}
+              {{ p_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-primary my-3" type="submit">Update</button>
+              <p class="btn btn-outline-secondary my-3" id="update-cancel-button">Cancel</p>
+          </div>
+        </form>
+      </div>
     </div>
 {% endblock content %}
