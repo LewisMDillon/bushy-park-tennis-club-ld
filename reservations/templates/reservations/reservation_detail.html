@@ -1,0 +1,24 @@
+{% extends 'website/base.html' %}
+{% block content %}
+    <article class="media content-section">
+        <h1>Reservation Details</h1>
+        <div class="media-body">
+            <div class="article-metadata">
+                <p>CREATED BY -- {{ object.created_by }}</p>
+                <p>CREATED ON -- {{ object.date_created }}</p>
+                <p>BOOKED FOR -- {{ object.date }}</p>
+                <p>TIMESLOT -- {{ object.get_timeslot_display }}</p>
+                <p>COURT -- {{ object.get_court_number_display }}</p>
+                {% if object.author == user %}
+                    <div>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'reservation-delete' object.id %}">Delete</a>
+                    </div>
+                {% elif user.is_staff %}
+                    <div>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'reservation-delete' object.id %}">Delete</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </article>
+{% endblock content %}

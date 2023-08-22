@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django import forms
 from django.views.generic import (
     ListView,
@@ -8,6 +8,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
     )
+from django.urls import reverse_lazy
 from .models import Reservation
 import datetime
 
@@ -16,27 +17,41 @@ class ReservationListView(ListView):
     model = Reservation
     template_name = 'reservations/reservation_list.html'
     context_object_name = 'reservations'
-    ordering = ['-date_created']
+    ordering = ['date']
     # paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        title_search_input = self.request.GET.get('title-search') or ''
-        if title_search_input:
+        # ----- Date Search -----
+        date_search_input = self.request.GET.get('date-search') or ''
+        if date_search_input:
             context['reservations'] = context['reservations'].filter(
-                title__istartswith=title_search_input
+                date=date_search_input
             )
-        context['title_search_input'] = title_search_input
+        context['date_search_input'] = date_search_input
 
-        court_search_input = self.request.GET.get('court-search') or ''
-        if court_search_input:
+        # ----- Timeslot Search -----
+        timeslot_search_input = self.request.GET.get('timeslot-search') or ''
+        if timeslot_search_input:
             context['reservations'] = context['reservations'].filter(
-                court_number__istartswith=court_search_input
+                timeslot=timeslot_search_input
             )
-        context['court_search_input'] = court_search_input
+        context['timeslot_search_input'] = timeslot_search_input
+
+        # ----- Name Search -----
+        name_search_input = self.request.GET.get('name-search') or ''
+        if name_search_input:
+            context['reservations'] = context['reservations'].filter(
+                created_by__last_name__icontains=name_search_input
+            )
+        context['name_search_input'] = name_search_input
 
         return context
+
+
+class ReservationDetailView(DetailView):
+    model = Reservation
 
 
 class ReservationTimesView(ListView):
@@ -63,6 +78,19 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
         form.fields['court_number'].widget = forms.HiddenInput()
         form.fields['date'].widget = forms.HiddenInput()
         return form
+
+
+class ReservationDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Reservation
+    success_url = reverse_lazy('reservation-list')
+
+    def test_func(self):
+        reservation = self.get_object()
+        if self.request.user == reservation.created_by:
+            return True
+        elif self.request.user.is_staff:
+            return True
+        return False
 
 
 def date_form(request):
