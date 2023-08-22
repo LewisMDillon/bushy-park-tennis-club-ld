@@ -1,50 +1,23 @@
 {% extends 'website/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <h1 class="m-4">Reservation List</h1>
-    <a href="{% url 'reservation-date' %}">New Booking</a>
+    <h1 class="m-4">Your Upcoming Reservations</h1>
+    <h4>Click on a reservation to view its details or delete it</h4>
 
-    <h4>Show all reservations on chosen date:</h4>
-    <form method="GET">
-        <input type="date" name="date-search" value="{{ date_search_input }}">
-        <input type="submit" value="Date Search">
-    </form>
-
-    <!-- <form method="GET">
-        <label for="timeslot-search">Choose a Timeslot:</label>
-        <select id="timeslot-search" name="timeslot-search" value="{{ timeslot_search_input }}">
-            <option value="0">9:00</option>
-            <option value="1">10:00</option>
-            <option value="2">11:00</option>
-            <option value="3">12:00</option>
-            <option value="4">13:00</option>
-            <option value="5">14:00</option>
-            <option value="6">15:00</option>
-            <option value="7">16:00</option>
-            <option value="8">17:00</option>
-            <option value="9">18:00</option>
-            <option value="10">19:00</option>
-            <option value="11">20:00</option>
-        </select>
-        <input type="submit" value="Timeslot Search" id="timeslot-search-submit">
-    </form> -->
-
-    <h4>Show all reservations made by a user:</h4>
-    <form method="GET">
-        <input type="text" name="name-search" value="{{ name_search_input }}">
-        <input type="submit" value="Name Search">
-    </form>
-
-    {% for reservation in reservations %} 
+    <div id="reservation-user-list-container">
+        {% for reservation in reservations %}
+            {% if reservation.created_by == user %}
             <div>
                 <hr>
                 <a class="mx-2" href="{% url 'reservation-detail' reservation.id %}">{{ reservation.title }}</a>
-                <small class="text-muted"> -- {{ reservation.date }}</small>
+                <small class="reservation-date" id="reservation-date">{{ reservation.date|date:"Y-m-d" }}</small>
                 <small class="text-muted"> -- {{ reservation.get_timeslot_display }}</small>
                 <small class="text-muted"> -- {{ reservation.get_court_number_display }}</small>
                 <small class="text-muted"> -- {{ reservation.created_by.first_name }} {{ reservation.created_by.last_name }}</small>
             </div>
-    {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
 
     <div id="page-button-container">
         {% if is_paginated %}

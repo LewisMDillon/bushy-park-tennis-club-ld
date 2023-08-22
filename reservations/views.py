@@ -50,6 +50,22 @@ class ReservationListView(ListView):
         return context
 
 
+class ReservationUserListView(ListView):
+    model = Reservation
+    template_name = 'reservations/reservation_user_list.html'
+    context_object_name = 'reservations'
+    ordering = ['date']
+    # paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        today = datetime.date.today()
+        context = super().get_context_data(**kwargs)
+        context['reservations'] = context['reservations'].filter(
+            date__gte=today
+        )
+        return context
+
+
 class ReservationDetailView(DetailView):
     model = Reservation
 
