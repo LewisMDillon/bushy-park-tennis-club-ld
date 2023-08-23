@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django import forms
 from django.views.generic import (
     ListView,
@@ -76,9 +78,14 @@ class ReservationTimesView(ListView):
     context_object_name = 'reservations'
 
 
-class ReservationCreateView(LoginRequiredMixin, CreateView):
+class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Reservation
     fields = ['date', 'timeslot', 'court_number']
+    success_url = reverse_lazy('reservation-user-list')
+    success_message = (
+        'Your reservation has been made successfully. You will'
+        ' receive a confirmation email shortly.'
+    )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -88,7 +95,7 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.created_by = self.request.user
         return super().form_valid(form)
-    
+
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
         form.fields['court_number'].widget = forms.HiddenInput()

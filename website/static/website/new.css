@@ -418,7 +418,10 @@ a.article-title:hover {
 
 /* -------------- MESSAGES ---------------*/
 
-
+#message-container-outer {
+  display: flex;
+  justify-content: center;
+}
 
 /* -------------- DATE FORM ---------------*/
 
