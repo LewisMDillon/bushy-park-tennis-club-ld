@@ -97,10 +97,7 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         form.instance.created_by = self.request.user
         send_mail(
             'Bushy Park Tennis Club - Reservation Confirmation',
-            'This is an email confirmation of your court booking at '
-            'Bushy Park Tennis Club. '
-            'To view/cancel your booking, please log in to your account '
-            'and click on "my reservations".',
+            f'Hi {self.request.user.first_name}, This is an email confirmation.',
             'from@yourdjangoapp.com',
             [self.request.user.email],
             fail_silently=False,
@@ -112,9 +109,6 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         form.fields['court_number'].widget = forms.HiddenInput()
         form.fields['date'].widget = forms.HiddenInput()
         return form
-
-    def test():
-        print('I am the test print!')
 
 
 class ReservationDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
