@@ -29,6 +29,20 @@
 }
 
 
+@media (max-width: 584px) {
+  #reservation-search-container-outer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #reservation-search-container-date {
+    margin-bottom: 30px;
+  }
+}
+
+
+
 
 html {
   scroll-behavior: smooth;
@@ -372,6 +386,7 @@ a.article-title:hover {
   background-color: #304f2a;
   color: #fff;
   max-width: 100%;
+  margin-top: 20px;
 }
 
 #footer-container-secondary {
@@ -531,4 +546,48 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
 
 #div_id_timeslot label {
   display: none;
+}
+
+/* ---------- RESERVATION LIST -------------*/
+
+#reservation-search-container-outer {
+  display: flex;
+  justify-content: center;
+}
+
+#reservation-search-container-date {
+  max-width: 305px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgba(48,79,42, 0.2);
+  background: #e9e9e9;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+#reservation-search-container-name {
+  max-width: 305px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgba(48,79,42, 0.2);
+  background: #e9e9e9;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+#reservation-name-search {
+  width: 150px;
+}
+
+#reservation-date-search {
+  width: 150px;
+}
+
+#reservation-table-container {
+  display: flex;
+  justify-content: center;
+}
+
+#reservation-table {
+ max-width: 1200px;
 }

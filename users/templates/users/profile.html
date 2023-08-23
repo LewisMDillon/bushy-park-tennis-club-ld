@@ -14,6 +14,7 @@
           <p>Username: {{ user.username }}</p>
           <p>Email: {{ user.email }}</p>
         </div>
+        <div><a href="{% url 'reservation-user-list' %}">Click here to see your upcoming court reservations</a></div>
       </div>
       <button class="btn btn-outline-secondary my-3" id="update-button">Edit Profile</button>
       <div id="profile-form-container">
