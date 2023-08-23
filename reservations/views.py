@@ -99,7 +99,7 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
             'SUBJECT',
             'BODY',
             'from@yourdjangoapp.com',
-            ['to@yourbestuser.com'],
+            [self.request.user.email],
             fail_silently=False,
         )
         return super().form_valid(form)
