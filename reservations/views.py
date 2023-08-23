@@ -97,9 +97,11 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         form.instance.created_by = self.request.user
         # reservation = self.get_object()
         reservation_date = self.request.POST.get('date')
+        reservation_timeslot = self.request.POST.get('timeslot')
+        reservation_court_number = self.request.POST.get('court_number')
         send_mail(
             'Bushy Park Tennis Club - Reservation Confirmation',
-            f'Hi {self.request.user.first_name}, This is an email confirmation. Booking Details: {reservation_date}',
+            f'Hi {self.request.user.first_name}, This is an email confirmation. Booking Details: {reservation_date}{reservation_timeslot}{reservation_court_number}',
             'from@yourdjangoapp.com',
             [self.request.user.email],
             fail_silently=False,
