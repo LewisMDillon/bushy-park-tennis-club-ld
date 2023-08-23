@@ -26,6 +26,9 @@
   #message-container {
     margin-top: 60px;
   }
+  body {
+    margin-top: 53px;
+  }
 }
 
 
@@ -82,6 +85,10 @@ ul {
 }
 
 .nav-link:hover {
+  color: rgb(161, 161, 161)
+}
+
+.nav-link:focus {
   color: rgb(161, 161, 161)
 }
 
@@ -591,3 +598,20 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
 #reservation-table {
  max-width: 1200px;
 }
+
+/* ---------- RESERVATION DETAILS -------------*/
+
+#reservation-detail-container {
+  margin-bottom: 120px;
+}
+
+#reservation-detail-table {
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+
+#reservation-delete-confirm-container {
+  max-width: 320px;
+  margin-bottom: 125px;
+}
+

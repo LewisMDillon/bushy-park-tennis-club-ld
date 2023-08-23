@@ -58,9 +58,10 @@
                                 <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
                                 <li><a class="dropdown-item" href="{% url 'reservation-user-list' %}">My Reservations</a></li>
+                                <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                                 </ul>
                             </li>
-                            <li><a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a></li>
+                            <li><a class="nav-item nav-link" href="{% url 'reservation-date' %}">Reserve a Court</a></li>
                         {% else %}
                             <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                             <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>

@@ -17,7 +17,7 @@ class ReservationListView(ListView):
     model = Reservation
     template_name = 'reservations/reservation_list.html'
     context_object_name = 'reservations'
-    ordering = ['-date']
+    ordering = ['-date', 'timeslot']
     # paginate_by = 10
 
     def get_context_data(self, **kwargs):
@@ -54,7 +54,7 @@ class ReservationUserListView(ListView):
     model = Reservation
     template_name = 'reservations/reservation_user_list.html'
     context_object_name = 'reservations'
-    ordering = ['date']
+    ordering = ['date', 'timeslot']
     # paginate_by = 10
 
     def get_context_data(self, **kwargs):

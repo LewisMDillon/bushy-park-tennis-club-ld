@@ -1,21 +1,44 @@
 {% extends 'website/base.html' %}
 {% block content %}
-    <article class="media content-section">
-        <h1>Reservation Details</h1>
+    <article class="mx-5 mt-5" id="reservation-detail-container">
+        <h1 class="mt-3">Reservation Details</h1>
         <div class="media-body">
-            <div class="article-metadata">
-                <p>CREATED BY -- {{ object.created_by }}</p>
-                <p>CREATED ON -- {{ object.date_created }}</p>
-                <p>BOOKED FOR -- {{ object.date }}</p>
-                <p>TIMESLOT -- {{ object.get_timeslot_display }}</p>
-                <p>COURT -- {{ object.get_court_number_display }}</p>
+                <small class="text-muted">Reservation made by: {{ object.created_by }}</small>
+                <br>
+                <small class="text-muted">Reservation made on {{ object.date_created }}</small>
+
+                <table class="table" id="reservation-detail-table">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Date</th>
+                        <td>{{ object.date }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Time</th>
+                        <td>{{ object.get_timeslot_display }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Court</th>
+                        <td>{{ object.get_court_number_display }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                 {% if object.author == user %}
                     <div>
-                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'reservation-delete' object.id %}">Delete</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'reservation-delete' object.id %}">Cancel Reservation</a>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'reservation-user-list' %}">Back</a>
                     </div>
                 {% elif user.is_staff %}
                     <div>
-                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'reservation-delete' object.id %}">Delete</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'reservation-delete' object.id %}">Cancel Reservation</a>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'reservation-user-list' %}">Back</a>
                     </div>
                 {% endif %}
             </div>
