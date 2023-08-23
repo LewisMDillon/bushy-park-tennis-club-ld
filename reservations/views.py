@@ -96,8 +96,11 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
     def form_valid(self, form):
         form.instance.created_by = self.request.user
         send_mail(
-            'SUBJECT',
-            'BODY',
+            'Bushy Park Tennis Club - Reservation Confirmation',
+            'This is an email confirmation of your court booking at '
+            'Bushy Park Tennis Club. '
+            'To view/cancel your booking, please log in to your account '
+            'and click on "my reservations".',
             'from@yourdjangoapp.com',
             [self.request.user.email],
             fail_silently=False,
