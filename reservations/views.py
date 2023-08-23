@@ -103,7 +103,10 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
             f"The details of your booking are below. "
             f"If you need to cancel this booking, please "
             f"log in to your account and do so there. "
-            f"{form}",
+            f"\n---TESTING---\n"
+            f"DATE: {form.date.value}",
+            f"TIME: {form.timeslot.value}",
+            f"COURT: {form.court_number.display}",
             'from@yourdjangoapp.com',  # EMAIL FROM (OVERRIDDEN)
             [self.request.user.email],  # EMAIL TO
             fail_silently=False,
