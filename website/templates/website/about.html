@@ -1,4 +1,64 @@
 {% extends 'website/base.html' %}
+{% load static %}
 {% block content %}
-    <h1>Tennis Club About</h1>
+<h1 class="my-5 text-center">About Our Club</h1>
+
+<div class="container marketing">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Beautiful Facilities</h2>
+            <p class="lead">Our Club has nine floodlit, all-weather tennis courts, including three artificial clay courts, all 
+                kept to the highest standards. Our clubhouse can provide you with everything you need 
+                for your tennis match, including racquets, balls, grips and much more. Pop in to the 
+                clubhouse and one of our lovely staff members will be happy to help you.</p>
+        </div>
+        <div class="col-md-5">
+            <img src="{% static 'img/beautiful-facilities.jpg' %}" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Open To All</h2>
+            <p class="lead">Everyone is welcome to play at Bushy Park, and our no-membership model means that you don't have to jump
+                through a thousand hoops in order to play tennis here, just book in online and you can
+                turn up and play tennis on our wonderful courts - no membership required!</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img src="{% static 'img/open-to-all.jpg' %}" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+        </div>
+    </div>
+    
+
+    <!-- <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Open To All</h2>
+            <p class="lead">Everyone is welcome to play at Bushy Park, and our no-membership model means that you don't have to jump
+                through a thousand hoops in order to play tennis here, just book in online and you can
+                turn up and play tennis on our wonderful courts - no membership required!
+            </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <div class="col-md-5">
+                <img src="{% static 'img/open-to-all.jpg' %}" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+            </div>
+        </div>
+    </div> -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Fairly Priced</h2>
+            <p class="lead">We pride ourselves on keeping our prices low so that tennis can be enjoyed here by all members of the community.
+                we offer great prices on court rentals, coaching and more so drop in and say hello!</p>
+        </div>
+        <div class="col-md-5">
+            <img src="{% static 'img/fairly-priced.jpg' %}" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+        </div>
+    </div>
+    <hr class="featurette-divider">
+</div>
 {% endblock content %}

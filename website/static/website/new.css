@@ -380,11 +380,17 @@ a.article-title:hover {
 
 #feature-1 {
   color: #fff;
-  background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("/static/img/sunrise-courts.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+}
+
+.featurette-image {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 /* -------------- FOOTER ----------------- */
@@ -614,4 +620,3 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   max-width: 320px;
   margin-bottom: 125px;
 }
-
