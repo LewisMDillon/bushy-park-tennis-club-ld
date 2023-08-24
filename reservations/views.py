@@ -133,19 +133,19 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         court_number_correct = (int(reservation_court_number) + 1)
         
         send_mail(
-            'Bushy Park Tennis Club - Reservation Confirmation',
-            f'Hi {self.request.user.first_name}, \nThis is an email'
+            'Bushy Park Tennis Club - Reservation Confirmation',  # SUBJECT
+            f'Hi {self.request.user.first_name}, \nThis is an email'  # BODY
             f' confirmation of your court reservation at'
             f' Bushy Park Tennis Club. \n\n'
-            f'\n\n -- RESERVATION DETAILS --\n\n'
+            f'\n -- RESERVATION DETAILS --\n\n'
             f'DATE: {reservation_date}\n'
             f'TIME: {reservation_timeslot} \n'
             f'COURT: {court_number_correct}'
-            f'\n\nIf you need to cancel this reservation, please log on'
+            f'\n\nIf you need to cancel this reservation, please log in'
             f'to your account on our site and click "My Reservations".'
             f'\n\nWe look forward to seeing you at the club!',
-            'from@yourdjangoapp.com',
-            [self.request.user.email],
+            'from@yourdjangoapp.com',  # FROM (OVERRIDDEN)
+            [self.request.user.email], # TO
             fail_silently=False,
         )
         return super().form_valid(form)
