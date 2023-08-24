@@ -101,7 +101,16 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         reservation_court_number = self.request.POST.get('court_number')
         send_mail(
             'Bushy Park Tennis Club - Reservation Confirmation',
-            f'Hi {self.request.user.first_name}, This is an email confirmation. Booking Details: {reservation_date}{reservation_timeslot}{reservation_court_number}',
+            f'Hi {self.request.user.first_name}, This is an email'
+            f'confirmation of your court reservation at'
+            f'Bushy Park Tennis Club. \n\n'
+            f'\n\n -- RESERVATION DETAILS --\n\n'
+            f'DATE: {reservation_date}\n'
+            f'TIME: {reservation_timeslot} \n'
+            f'COURT: {reservation_court_number}'
+            f'If you need to cancel this reservation, please log on'
+            f'to your account on our site and click "My Reservations".'
+            f'\nWe look forward to seeing you at the club!'
             'from@yourdjangoapp.com',
             [self.request.user.email],
             fail_silently=False,
