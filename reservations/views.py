@@ -16,7 +16,7 @@ from .models import Reservation
 import datetime
 
 
-class ReservationListView(ListView):
+class ReservationListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
     model = Reservation
     template_name = 'reservations/reservation_list.html'
     context_object_name = 'reservations'
@@ -51,6 +51,11 @@ class ReservationListView(ListView):
         context['name_search_input'] = name_search_input
 
         return context
+
+    def test_func(self):
+        if self.request.user.is_staff:
+            return True
+        return False
 
 
 class ReservationUserListView(ListView):
