@@ -99,7 +99,7 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         reservation_date = self.request.POST.get('date')
         reservation_timeslot = self.request.POST.get('timeslot')
         reservation_court_number = self.request.POST.get('court_number')
-        if reservation_timeslot == 0:
+        if reservation_timeslot == '0':
             reservation_timeslot = '9:00'
         send_mail(
             'Bushy Park Tennis Club - Reservation Confirmation',
