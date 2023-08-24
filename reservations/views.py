@@ -97,12 +97,14 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         form.instance.created_by = self.request.user
         # reservation = self.get_object()
         reservation_date = self.request.POST.get('date')
-        reservation_timeslot = self.request.POST.get('timeslot_display')
-        reservation_court_number = self.request.POST.get('court_number_display')
+        reservation_timeslot = self.request.POST.get('timeslot')
+        reservation_court_number = self.request.POST.get('court_number')
+        if reservation_timeslot == 0:
+            reservation_timeslot = '9:00'
         send_mail(
             'Bushy Park Tennis Club - Reservation Confirmation',
             f'Hi {self.request.user.first_name}, \nThis is an email'
-            f'confirmation of your court reservation at'
+            f' confirmation of your court reservation at'
             f' Bushy Park Tennis Club. \n\n'
             f'\n\n -- RESERVATION DETAILS --\n\n'
             f'DATE: {reservation_date}\n'
