@@ -4,13 +4,26 @@
 {% block content %}
 <!-- HERO SECTION -->
 <div class="px-4 py-5 my-2 text-center" id="hero">
+    <style>
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('https://res.cloudinary.com/lewismd/image/upload/v1692894959/rkz5bmrxdc4zzvk03gjz.webp');
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+            min-height: 95vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
     <h2 class="my-4" id="sub-heading">Welcome to our website!</h2>
     <h1 class="display-5 fw-bold mb-5 text-body-emphasis align-middle" id="main-heading">Bushy Park Tennis Club</h1>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4"></p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <a class="hero-button" href="#about-us">Tell Me More</a>
-            <!-- <button type="button" class="btn btn-primary btn-lg px-5 py-4 gap-2">Tell me more</button> -->
         </div>
     </div>
 </div>
@@ -18,7 +31,6 @@
 <div class="container" id="about-us">
     <div class="row">
         <div class="col-sm-8 mx-auto">
-            <hr>
             <h2 class="text-center my-3">About Us</h2>
             <p>
                 Bushy Park Tennis Club is a vibrant and exciting tennis club in Terenure.
@@ -42,7 +54,6 @@
 <!-- LATEST NEWS SECTION -->
 <div class="container py-4">
     <header class="pb-3 mb-4 border-bottom">
-        <h2 class="text-center my-3">Latest News</h2>
     </header>
     <!-- MAIN NEWS JUMBOTRON -->
     <div class="p-5 mb-4 bg-body-tertiary border rounded-3" id="news-primary">
@@ -76,7 +87,7 @@
                 {{ latest_post.subtitle }}
                 Click below for details
             </p>
-            <button class="btn btn-lg" type="button">Find out more</button>
+            <a class="btn green-button" href="{% url 'website-news' %}">Find out more</a>
         </div>
     </div>
 
@@ -114,7 +125,7 @@
                     {{ second_last_post.subtitle }}
                     Click below for details.
                 </p>
-                <button class="btn btn-outline-light" type="button">Find Out More</button>
+                <a class="btn green-button" href="{% url 'website-news' %}">Find out more</a>
             </div>
         </div>
 
@@ -149,14 +160,14 @@
                     {{ third_last_post.subtitle }}
                     Click below for details.
                 </p>
-                <button class="btn btn-outline-secondary" type="button">Find Out More</button>
+                <a class="btn green-button" href="{% url 'website-news' %}">Find out more</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- CAROUSEL -->
-<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+<!-- <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
             aria-label="Slide 1"></button>
@@ -210,10 +221,10 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
+</div> -->
 
 <!-- CLUB FEATURES SECTION -->
-<div class="container px-4 py-5" id="featured-3">
+<!-- <div class="container px-4 py-5" id="featured-3">
     <h2 class="pb-2 border-bottom">Our Club</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="feature col">
@@ -247,5 +258,5 @@
             </a>
         </div>
     </div>
-</div>
+</div> -->
 {% endblock content %}
