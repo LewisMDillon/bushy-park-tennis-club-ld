@@ -34,7 +34,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'subtitle', 'content', 'image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -50,7 +50,7 @@ class PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'subtitle', 'content', 'image']
 
     def form_valid(self, form):
         return super().form_valid(form)
@@ -79,6 +79,10 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'website/about.html')
+
+
+def contact(request):
+    return render(request, 'website/contact.html')
 
 
 def index(request):
