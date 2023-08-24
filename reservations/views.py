@@ -97,17 +97,17 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         form.instance.created_by = self.request.user
         # reservation = self.get_object()
         reservation_date = self.request.POST.get('date')
-        reservation_timeslot = self.request.POST.get('timeslot')
-        reservation_court_number = self.request.POST.get('court_number')
+        reservation_timeslot = self.request.POST.get('timeslot_display')
+        reservation_court_number = self.request.POST.get('court_number_display')
         send_mail(
             'Bushy Park Tennis Club - Reservation Confirmation',
             f'Hi {self.request.user.first_name}, \nThis is an email'
             f'confirmation of your court reservation at'
             f' Bushy Park Tennis Club. \n\n'
             f'\n\n -- RESERVATION DETAILS --\n\n'
-            f'DATE: {reservation_date|date:"d M, Y"}\n'
-            f'TIME: {reservation_timeslot_display} \n'
-            f'COURT: {reservation_court_number_display}'
+            f'DATE: {reservation_date}\n'
+            f'TIME: {reservation_timeslot} \n'
+            f'COURT: {reservation_court_number}'
             f'\n\nIf you need to cancel this reservation, please log on'
             f'to your account on our site and click "My Reservations".'
             f'\n\nWe look forward to seeing you at the club!',
