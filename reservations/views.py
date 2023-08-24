@@ -99,8 +99,34 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         reservation_date = self.request.POST.get('date')
         reservation_timeslot = self.request.POST.get('timeslot')
         reservation_court_number = self.request.POST.get('court_number')
+
         if reservation_timeslot == '0':
             reservation_timeslot = '9:00'
+        elif reservation_timeslot == '1':
+            reservation_timeslot = '10:00'
+        elif reservation_timeslot == '2':
+            reservation_timeslot = '11:00'
+        elif reservation_timeslot == '3':
+            reservation_timeslot = '12:00'
+        elif reservation_timeslot == '4':
+            reservation_timeslot = '13:00'
+        elif reservation_timeslot == '5':
+            reservation_timeslot = '14:00'
+        elif reservation_timeslot == '6':
+            reservation_timeslot = '15:00'
+        elif reservation_timeslot == '7':
+            reservation_timeslot = '16:00'
+        elif reservation_timeslot == '8':
+            reservation_timeslot = '17:00'
+        elif reservation_timeslot == '9':
+            reservation_timeslot = '18:00'
+        elif reservation_timeslot == '10':
+            reservation_timeslot = '19:00'
+        elif reservation_timeslot == '11':
+            reservation_timeslot = '20:00'
+
+        court_number_correct = (int(reservation_court_number) + 1)
+        
         send_mail(
             'Bushy Park Tennis Club - Reservation Confirmation',
             f'Hi {self.request.user.first_name}, \nThis is an email'
@@ -109,7 +135,7 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
             f'\n\n -- RESERVATION DETAILS --\n\n'
             f'DATE: {reservation_date}\n'
             f'TIME: {reservation_timeslot} \n'
-            f'COURT: {reservation_court_number}'
+            f'COURT: {court_number_correct}'
             f'\n\nIf you need to cancel this reservation, please log on'
             f'to your account on our site and click "My Reservations".'
             f'\n\nWe look forward to seeing you at the club!',
