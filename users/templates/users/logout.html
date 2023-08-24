@@ -1,9 +1,9 @@
 {% extends 'website/base.html' %}
 {% block content %}
-    <h2>You have been logged out</h2>
+    <h2 class="text-center my-5">You have been logged out</h2>
     <div class="border-top pt-3">
-        <small class="text-muted">
-            <a href="{% url 'login' %}">Log in again</a>
-        </small>
+        <p class="text-center">
+            <a class="btn green-button" href="{% url 'login' %}" id="relog-button">Log in again</a>
+        </p>
     </div>
 {% endblock content %}

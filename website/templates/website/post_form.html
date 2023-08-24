@@ -1,15 +1,15 @@
 {% extends 'website/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
+    <div class="content-section" id="new-post-page-container">
         <form method="POST">
             {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Site Post</legend>
+            <fieldset class="form-group" id="new-post-form-container">
+                <h1 class="my-5 text-center">New Post</h1>
                 {{ form|crispy }}
             </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Post</button>
+            <div class="form-group my-2" id="new-post-button-container">
+                <button class="btn green-button" type="submit">Post</button>
             </div>
         </form>
     </div>

@@ -100,7 +100,6 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
 
     def form_valid(self, form):
         form.instance.created_by = self.request.user
-        # reservation = self.get_object()
         reservation_date = self.request.POST.get('date')
         reservation_timeslot = self.request.POST.get('timeslot')
         reservation_court_number = self.request.POST.get('court_number')
