@@ -157,9 +157,12 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         return form
 
 
-class ReservationDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class ReservationDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = Reservation
-    success_url = reverse_lazy('reservation-list')
+    success_url = reverse_lazy('reservation-user-list')
+    success_message = (
+        'Your reservation has been cancelled.'
+    )
 
     def test_func(self):
         reservation = self.get_object()
@@ -168,6 +171,10 @@ class ReservationDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView)
         elif self.request.user.is_staff:
             return True
         return False
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(ReservationDeleteView, self).delete(request, *args, **kwargs)
 
 
 def date_form(request):
