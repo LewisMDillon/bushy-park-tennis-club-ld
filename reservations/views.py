@@ -58,7 +58,7 @@ class ReservationListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
         return False
 
 
-class ReservationUserListView(ListView):
+class ReservationUserListView(LoginRequiredMixin, ListView):
     model = Reservation
     template_name = 'reservations/reservation_user_list.html'
     context_object_name = 'reservations'
