@@ -110,7 +110,7 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
             f'COURT: {reservation_court_number}'
             f'If you need to cancel this reservation, please log on'
             f'to your account on our site and click "My Reservations".'
-            f'\nWe look forward to seeing you at the club!'
+            f'\nWe look forward to seeing you at the club!',
             'from@yourdjangoapp.com',
             [self.request.user.email],
             fail_silently=False,
