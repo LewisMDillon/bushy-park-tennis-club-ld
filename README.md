@@ -5,6 +5,27 @@
 
 Bushy Park Tennis Club is a fully functioning web application for a tennis club. The site provides users with all important information about the tennis club, and allows users to easily create personal accounts and profiles, and utilises a fully fleshed-out court reservation system. The site also enables administrators to post news articles to the site, as well as view and make changes to reservations on behalf of users.
 
+## UX
+
+The design philosophy was to create a simple, minimalistic look, which would be in stark contrast to the many cluttered and confusing sports club websites that the user will have undoubtedly come across. Relevant information is presented in a salient and refreshingly clean manner, allowing the user to easily and pleasingly navigate through the site.
+
+### Colour Scheme
+
+
+The color scheme uses soft white and grey colors, with a strong "tennis style" dark-green accent which is present throughout the site.
+
+
+I used [coolors.co](https://coolors.co/000000-333333-a1a1a1-f5f5f5-ffffff-507e50-507948-304f2a-263e21) to generate my colour palette.
+
+![screenshot](documentation/coolors.png)
+
+
+### Typography
+
+- [Raleway](https://fonts.google.com/specimen/Raleway) was used for the primary headers, titles, and text content.
+
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+
 
 Welcome LewisMDillon,
 
