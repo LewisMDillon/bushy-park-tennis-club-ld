@@ -1,3 +1,5 @@
+/* MEDIA QUERIES */
+
 @media (min-width: 992px) {
     .rounded-lg-3 { 
       border-radius: .3rem; 
@@ -21,6 +23,10 @@
 
   #message-container {
     margin-top: 20px;
+  }
+
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
 }
 
@@ -61,12 +67,21 @@
   }
 }
 
+/* -------- GENERAL STYLING -------- */
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
 
+ul {
+margin: 0;
+}
 
 html {
   scroll-behavior: smooth;
 }
+
+/* -------- NAVBAR -------- */
 
 #navbar {
   background-color: #304f2a;
@@ -80,14 +95,6 @@ html {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-
-body {
-    font-family: 'Raleway', sans-serif;
-}
-
-ul {
-  margin: 0;
-}
 
 #logo {
     color: #fff;
@@ -118,6 +125,8 @@ ul {
   text-decoration: none;
   background-color: #304f2a;
 }
+
+/* -------- HERO SECTION -------- */
 
 #hero {
     background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("/static/img/tennis-nets-cropped.jpg");
@@ -176,6 +185,8 @@ ul {
     font-weight: 500;
 }
 
+/* -------- CUSTOM BUTTONS -------- */
+
 .green-button, .green-button-small {
   color: #fff;
   background-color:#304f2a
@@ -218,7 +229,7 @@ ul {
 }
 
 
-/* NEWS ARTICLES */
+/* -------- NEWS ARTICLES -------- */
 
 .news-box {
   padding: 15px;
@@ -295,7 +306,7 @@ a.article-title:hover {
   max-width: 600px;
 }
 
-/* NEW POST PAGE */
+/* -------- NEW POST PAGE -------- */
 
 #new-post-page-container {
   display: flex;
@@ -320,7 +331,7 @@ a.article-title:hover {
 }
 
 
-/* PROFILE PAGE */
+/* -------- PROFILE PAGE -------- */
 
 #profile-container {
   background: #ffffff;
@@ -346,12 +357,7 @@ a.article-title:hover {
   max-width: 360px;
 }
 
-/* ABOUT US */
-#about-us {
-  scroll-margin-top: 60px;
-}
-
-/* CONTACT PAGE */
+/* -------- CONTACT PAGE -------- */
 
 #google-map-container {
   display: flex;
@@ -378,7 +384,8 @@ a.article-title:hover {
   color: #304f2a;
 }
 
-/* CLUB FEATURES */
+/* -------- CLUB FEATURES -------- */
+
 .feature-icon i {
     color: #304f2a;
     font-size: 4rem;
@@ -389,80 +396,7 @@ a.article-title:hover {
   font-size: 1.2rem;
 }
 
-/* NEWS JUMBOTRONS */
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-
-  .b-example-divider {
-    width: 100%;
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-  }
-
-  .b-example-vr {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 100vh;
-  }
-
-  .bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-  }
-
-  .nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
-    overflow-y: hidden;
-  }
-
-  .nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .btn-bd-primary {
-    --bd-violet-bg: #712cf9;
-    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-    --bs-btn-font-weight: 600;
-    --bs-btn-color: var(--bs-white);
-    --bs-btn-bg: var(--bd-violet-bg);
-    --bs-btn-border-color: var(--bd-violet-bg);
-    --bs-btn-hover-color: var(--bs-white);
-    --bs-btn-hover-bg: #6528e0;
-    --bs-btn-hover-border-color: #6528e0;
-    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-    --bs-btn-active-color: var(--bs-btn-hover-color);
-    --bs-btn-active-bg: #5a23c8;
-    --bs-btn-active-border-color: #5a23c8;
-  }
-  .bd-mode-toggle {
-    z-index: 1500;
-  }
-
-  /* ---------- NEWS JUMBOTRONS --------------*/
+/* -------- NEWS JUMBOTRONS -------- */
 
   #news-primary button {
     color: #fff;
@@ -485,20 +419,21 @@ a.article-title:hover {
   }
 
 
-/* ----------- FEATURETTES --------------*/
+/* -------- ABOUT US PAGE -------- */
 
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+#about-us {
+  scroll-margin-top: 60px;
 }
 
-/* Thin out the marketing headings */
-/* rtl:begin:remove */
+.featurette-divider {
+  margin: 5rem 0;
+}
+
 .featurette-heading {
   letter-spacing: -.05rem;
 }
 
 @media (min-width: 40em) {
-  /* Bump up size of carousel content */
   .carousel-caption p {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
@@ -532,7 +467,7 @@ a.article-title:hover {
   border-radius: 10px
 }
 
-/* -------------- FOOTER ----------------- */
+/* -------- FOOTER -------- */
 
 #footer-container {
   background-color: #304f2a;
@@ -563,14 +498,14 @@ a.article-title:hover {
   color: #aaaaaa;
 }
 
-/* -------------- MESSAGES ---------------*/
+/* -------- MESSAGES -------- */
 
 #message-container-outer {
   display: flex;
   justify-content: center;
 }
 
-/* -------------- DATE FORM ---------------*/
+/* -------- RESERVATION-DATE FORM -------- */
 
 #date-form-heading {
   margin-top: 100px;
@@ -618,18 +553,9 @@ a.article-title:hover {
   box-shadow: 0 0 0 0.25rem rgb(111 111 111 / 50%)
 }
 
-/* input {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
-} */
-
 input.picker[type="date"] {
   position: relative;
   padding: 10px;
-  /* width: 100%; */
   font-family: Raleway;
   border: 1px solid #aaaaaa;
 }
@@ -645,7 +571,7 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   background: transparent;
 }
 
-/* ---------- TIME FORM -------------*/
+/* -------- RESERVATION-TIME FORM -------- */
 
 #time-form-heading {
   margin-top: 100px;
@@ -674,9 +600,6 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   width: 156px;
   font-family: Raleway;
   border: 1px solid #aaaaaa;
-}
-
-#id_timeslot option {
 }
 
 .reservation-dates {
@@ -711,7 +634,7 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-/* ---------- RESERVATION LIST -------------*/
+/* -------- MASTER RESERVATION LIST -------- */
 
 #reservation-search-container-outer {
   display: flex;
@@ -755,7 +678,7 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
  max-width: 1200px;
 }
 
-/* ---------- RESERVATION DETAILS -------------*/
+/* -------- RESERVATION DETAILS -------- */
 
 #reservation-detail-container {
   margin-bottom: 120px;
@@ -771,7 +694,7 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   margin-bottom: 125px;
 }
 
-/* SIGNUP PAGE */
+/* -------- SIGNUP PAGE -------- */
 
 #signup-page-container {
   display: flex;
@@ -798,7 +721,7 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-/* LOGIN PAGE */
+/* -------- LOGIN PAGE -------- */
 
 #login-page-container {
   display: flex;
@@ -822,14 +745,14 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   justify-content: center;
 }
 
-/* LOGOUT PAGE */
+/* -------- LOGOUT PAGE -------- */
 
 #relog-button {
   margin-bottom: 350px;
   margin-top: 20px
 }
 
-/* RESET PASSWORD FORM */
+/* -------- RESET PASSWORD FORM -------- */
 
 #password-reset-page-container {
   display: flex;
@@ -853,7 +776,7 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   justify-content: center;
 }
 
-/* RESET CONFIRM PAGE */
+/* -------- RESET CONFIRM PAGE -------- */
 
 #password-reset-confirm-page-container {
   display: flex;
@@ -876,6 +799,8 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
   justify-content: center;
 }
+
+/* -------- RESET COMPLETE PAGE -------- */
 
 #password-reset-complete-button-container {
   display: flex;
