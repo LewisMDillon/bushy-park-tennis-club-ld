@@ -130,7 +130,7 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
             reservation_timeslot = '20:00'
 
         court_number_correct = (int(reservation_court_number) + 1)
-        
+
         send_mail(
             'Bushy Park Tennis Club - Reservation Confirmation',  # SUBJECT
             f'Hi {self.request.user.first_name}, \nThis is an email'  # BODY
