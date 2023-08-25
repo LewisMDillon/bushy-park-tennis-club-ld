@@ -13,12 +13,15 @@ urlpatterns = [
     path('news', PostListView.as_view(), name='website-news'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),
+
     path(
         'post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'
         ),
+
     path(
         'post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'
         ),
+
     path('about', views.about, name='website-about'),
     path('contact', views.contact, name='website-contact'),
     path('index', views.index, name='website-index'),

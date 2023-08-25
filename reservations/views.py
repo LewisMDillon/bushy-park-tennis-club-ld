@@ -84,7 +84,11 @@ class ReservationTimesView(ListView):
     context_object_name = 'reservations'
 
 
-class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+class ReservationCreateView(
+    LoginRequiredMixin,
+    SuccessMessageMixin,
+    CreateView
+        ):
     model = Reservation
     fields = ['date', 'timeslot', 'court_number']
     success_url = reverse_lazy('reservation-user-list')
@@ -144,7 +148,7 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
             f'to your account on our site and click "My Reservations".'
             f'\n\nWe look forward to seeing you at the club!',
             'from@yourdjangoapp.com',  # FROM (OVERRIDDEN)
-            [self.request.user.email], # TO
+            [self.request.user.email],  # TO
             fail_silently=False,
         )
         return super().form_valid(form)
@@ -156,7 +160,12 @@ class ReservationCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         return form
 
 
-class ReservationDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+class ReservationDeleteView(
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    SuccessMessageMixin,
+    DeleteView
+        ):
     model = Reservation
     success_url = reverse_lazy('reservation-user-list')
     success_message = (
@@ -173,7 +182,9 @@ class ReservationDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMess
 
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
-        return super(ReservationDeleteView, self).delete(request, *args, **kwargs)
+        return super(
+            ReservationDeleteView, self
+            ).delete(request, *args, **kwargs)
 
 
 def date_form(request):
