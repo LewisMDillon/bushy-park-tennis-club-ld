@@ -306,31 +306,6 @@ a.article-title:hover {
   max-width: 600px;
 }
 
-/* -------- NEW POST PAGE -------- */
-
-#new-post-page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-  margin-bottom: 100px;
-}
-
-#new-post-form-container {
-  max-width: 500px;
-}
-
-#new-post-form-container input {
-  width: 300px;
-  margin-bottom: 10px;
-}
-
-#new-post-button-container {
-  display: flex;
-  justify-content: center;
-}
-
-
 /* -------- PROFILE PAGE -------- */
 
 #profile-container {
@@ -694,55 +669,10 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   margin-bottom: 125px;
 }
 
-/* -------- SIGNUP PAGE -------- */
-
-#signup-page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-#signup-form-container {
-  max-width: 500px;
-}
-
-#signup-form-container input {
-  width: 300px;
-  margin-bottom: 10px;
-}
-
-#signup-button-container {
-  display: flex;
-  justify-content: center;
-}
+/* -------- DEFAULT FORM HINTS -------- */
 
 #hint_id_username, #hint_id_password1, #hint_id_password2, #hint_id_new_password1{
   display: none;
-}
-
-/* -------- LOGIN PAGE -------- */
-
-#login-page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-  margin-bottom: 100px;
-}
-
-#login-form-container {
-  max-width: 500px;
-}
-
-#login-form-container input {
-  width: 300px;
-  margin-bottom: 10px;
-}
-
-#login-button-container {
-  display: flex;
-  justify-content: center;
 }
 
 /* -------- LOGOUT PAGE -------- */
@@ -752,9 +682,9 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 20px
 }
 
-/* -------- RESET PASSWORD FORM -------- */
+/* -------- CUSTOM FORM CLASSES -------- */
 
-#password-reset-page-container {
+.custom-form-outer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -762,47 +692,16 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   margin-bottom: 100px;
 }
 
-#password-reset-form-container {
+.custom-form-inner-container {
   max-width: 500px;
 }
 
-#password-reset-form-container input {
+.custom-form-inner-container input {
   width: 300px;
   margin-bottom: 10px;
 }
 
-#password-reset-button-container {
-  display: flex;
-  justify-content: center;
-}
-
-/* -------- RESET CONFIRM PAGE -------- */
-
-#password-reset-confirm-page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-  margin-bottom: 100px;
-}
-
-#password-reset-confirm-form-container {
-  max-width: 500px;
-}
-
-#password-reset-confirm-form-container input {
-  width: 300px;
-  margin-bottom: 10px;
-}
-
-#password-reset-confirm-button-container {
-  display: flex;
-  justify-content: center;
-}
-
-/* -------- RESET COMPLETE PAGE -------- */
-
-#password-reset-complete-button-container {
+.custom-form-button-container {
   display: flex;
   justify-content: center;
 }

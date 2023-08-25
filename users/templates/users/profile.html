@@ -16,7 +16,7 @@
         </div>
         <div><a href="{% url 'reservation-user-list' %}">Click here to see your upcoming court reservations</a></div>
       </div>
-      <button class="btn btn-outline-secondary my-3" id="update-button">Edit Profile</button>
+      <button class="btn green-button my-3" id="update-button">Edit Profile</button>
       <div id="profile-form-container">
         <form method="POST" enctype="multipart/form-data" id="update-form">
           {% csrf_token %}
@@ -26,8 +26,8 @@
               {{ p_form|crispy }}
           </fieldset>
           <div class="form-group">
-              <button class="btn btn-outline-primary my-3" type="submit">Update</button>
-              <p class="btn btn-outline-secondary my-3" id="update-cancel-button">Cancel</p>
+              <button class="btn green-button my-3" type="submit">Update</button>
+              <p class="btn btn-secondary my-3" id="update-cancel-button">Cancel</p>
           </div>
         </form>
       </div>
