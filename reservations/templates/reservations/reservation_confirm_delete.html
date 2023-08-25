@@ -4,13 +4,13 @@
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Delete Reservation</legend>
-                <h2 class="my-3">Are you sure you want to delete this reservation?</h2>
+                <legend class="border-bottom mb-4">Cancel Reservation</legend>
+                <h2 class="my-3">Are you sure you want to cancel this reservation?</h2>
                 <p><strong>Cancelling a reservation within 24hrs may incur a cancellation fee</strong></p>
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-danger" type="submit">Yes, Delete</button>
-                <a class="btn btn-secondary" href="{% url 'reservation-detail' object.id %}">Cancel</a>
+                <button class="btn btn-danger" type="submit">Yes, cancel</button>
+                <a class="btn btn-secondary" href="{% url 'reservation-detail' object.id %}">No, go back</a>
             </div>
         </form>
     </div>
