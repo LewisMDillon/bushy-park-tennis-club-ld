@@ -828,3 +828,51 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   margin-bottom: 350px;
   margin-top: 20px
 }
+
+/* RESET PASSWORD FORM */
+
+#password-reset-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  margin-bottom: 100px;
+}
+
+#password-reset-form-container {
+  max-width: 500px;
+}
+
+#password-reset-form-container input {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#password-reset-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* RESET CONFIRM PAGE */
+
+#password-reset-confirm-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  margin-bottom: 100px;
+}
+
+#password-reset-confirm-form-container {
+  max-width: 500px;
+}
+
+#password-reset-confirm-form-container input {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#password-reset-confirm-button-container {
+  display: flex;
+  justify-content: center;
+}
