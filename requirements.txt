@@ -6,6 +6,7 @@ dj3-cloudinary-storage==0.0.6
 Django==3.2.20
 django-crispy-forms==2.0
 gunicorn==21.2.0
+Pillow==10.0.0
 psycopg2==2.9.6
 sqlparse==0.4.4
 urllib3==1.26.16
