@@ -4,14 +4,10 @@
     <h1 class="text-center my-5">Latest News</h1>
     <div id="article-container">
         {% for post in posts %}
-            <article class="media content-section col-md-8 my-4 news-box">
+            <article class="media col-md-8 my-4 news-box" style="background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('{{ post.image.url }}');">
                 <div class="media-body">
-                    <div class="article-metadata">
-                        <small class="text-muted">Posted by: {{ post.author }}</small>
-                        <small class="text-muted"> -- {{ post.date_posted }}</small>
-                    </div>
-                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                    <h5 class="article-content">{{ post.subtitle }}</h5>
+                    <h1><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h1>
+                    <p class="article-content">{{ post.subtitle }}</p>
                     <a class="btn green-button-small" href="{% url 'post-detail' post.id %}">Read More</a>
                 </div>
             </article>

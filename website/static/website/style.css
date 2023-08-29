@@ -234,10 +234,20 @@ html {
 .news-box {
   padding: 15px;
   border-radius: 10px;
-  border: 1px solid;
   border-color: rgba(48,79,42, 0.2);
-  background: #e9e9e9;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.4);
+  background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-2_qo9b5o.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  width: 720px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .content-section {
@@ -246,16 +256,25 @@ html {
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 #article-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
+#article-title-container {
+  border-radius: 10px;
+}
+
 .article-title {
-  color: #444444;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
 }
 
 a.article-title:hover {
@@ -265,6 +284,7 @@ a.article-title:hover {
 
 .article-content {
   white-space: pre-line;
+  margin-top: 20px;
 }
 
 .article-img {
@@ -282,6 +302,14 @@ a.article-title:hover {
 .article-metadata a:hover {
   color: #333;
   text-decoration: none;
+}
+
+#article-header-info {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .article-svg {
@@ -304,6 +332,18 @@ a.article-title:hover {
 
 #post-detail-container {
   max-width: 600px;
+}
+
+#post-content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-image {
+  max-width: 600px;
+  max-height: 600px;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 /* -------- PROFILE PAGE -------- */
@@ -377,6 +417,11 @@ a.article-title:hover {
     color: #fff;
     background-color: #304f2a;
     border-color: #263e21;
+  }
+
+  .jumbotron-container-secondary {
+    padding-right: calc(var(--bs-gutter-x) * .2);
+    padding-left: calc(var(--bs-gutter-x) * .2);
   }
 
 

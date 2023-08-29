@@ -56,7 +56,7 @@
     <header class="pb-3 mb-4 border-bottom">
     </header>
     <!-- MAIN NEWS JUMBOTRON -->
-    <div class="p-5 mb-4 bg-body-tertiary border rounded-3" id="news-primary">
+    <div class="p-5 mb-2 bg-body-tertiary border rounded-3" id="news-primary">
         <div class="container-fluid py-5">
             {% if "default" in latest_post.image.url %}
             <style>
@@ -95,7 +95,7 @@
     <div class="row align-items-md-stretch">
 
         <!-- LEFT JUMBOTRON -->
-        <div class="col-md-6">
+        <div class="col-md-6 jumbotron-container-secondary">
             <div class="h-100 p-5 text-bg-dark border rounded-3" id="news-secondary-left">
                 {% if "default" in second_last_post.image.url %}
                     <style>
@@ -130,7 +130,7 @@
         </div>
 
         <!-- RIGHT JUMBOTRON -->
-        <div class="col-md-6">
+        <div class="col-md-6 jumbotron-container-secondary">
             <div class="h-100 p-5 bg-body-tertiary border rounded-3" id="news-secondary-right">
                 {% if "default" in third_last_post.image.url %}
                     <style>
