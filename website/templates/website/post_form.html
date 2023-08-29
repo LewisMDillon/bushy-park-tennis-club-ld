@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section custom-form-outer-container">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <fieldset class="form-group custom-form-inner-container">
                 <h1 class="my-5 text-center">New Post</h1>
