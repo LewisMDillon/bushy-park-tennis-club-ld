@@ -705,3 +705,19 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
   justify-content: center;
 }
+
+/* -------- CUSTOM ERROR PAGES -------- */
+
+.wrap-error {
+  height: 100vh
+}
+.wrap-error h1 {
+  font-size: 6.875rem;
+  letter-spacing: -10px;
+  line-height: 1;
+  font-family: montserrat, sans-serif;
+}
+.error-number span {
+  color: #304f2a;
+  text-shadow: -8px 0 0 rgb(198 217 190);
+}

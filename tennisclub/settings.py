@@ -28,7 +28,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEBUG' in os.environ
+DEBUG = os.environ.get('DEBUG', False)
+if DEBUG == 'True':
+    print('Debug mode is on.')
+elif DEBUG is False:
+    print('Debug mode is off.')
 
 ALLOWED_HOSTS = [
     '8000-lewismdillo-bushyparkte-divi0h8scca.ws-eu104.gitpod.io',

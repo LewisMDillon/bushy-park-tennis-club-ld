@@ -91,3 +91,19 @@ def index(request):
 
 def base(request):
     return render(request, 'website/base.html')
+
+
+def test_404(request):
+    return render(request, 'website/404_test.html')
+
+
+def test_403(request):
+    return render(request, 'website/403_test.html')
+
+
+def test_400(request):
+    return render(request, 'website/400_test.html')
+
+
+def test_500(request):
+    return render(request, 'website/500_test.html')

@@ -17,6 +17,13 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from users import views as user_views
+from . import views
+
+# Handlers for custom error pages
+handler404 = 'tennisclub.views.page_not_found'
+handler403 = 'tennisclub.views.permission_denied'
+handler400 = 'tennisclub.views.bad_request'
+handler500 = 'tennisclub.views.server_error'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -63,4 +70,5 @@ urlpatterns = [
 
     path('', include('website.urls')),
     path('reserve/', include('reservations.urls')),
+    path('test-500', views.my_test_500_view, name='test-500'),
 ]
