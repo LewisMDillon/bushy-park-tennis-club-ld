@@ -69,12 +69,6 @@ class ReservationDetailView(DetailView):
     model = Reservation
 
 
-class ReservationTimesView(ListView):
-    model = Reservation
-    template_name = 'reservations/reservation_times.html'
-    context_object_name = 'reservations'
-
-
 class ReservationCreateView(
     LoginRequiredMixin,
     SuccessMessageMixin,
