@@ -385,7 +385,7 @@ class ReservationViewTestCase(TestCase):
 
     def test_date_form_render(self):
         """
-        First, checks that access tothe page is denied without user login.
+        First, checks that access to the page is denied without user login.
         Then, checks that the date form page is rendered properly when
         accessed by logged-in user
         """
