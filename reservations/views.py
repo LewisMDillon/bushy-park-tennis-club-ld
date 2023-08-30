@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django import forms
@@ -172,5 +173,6 @@ class ReservationDeleteView(
             ).delete(request, *args, **kwargs)
 
 
+@login_required
 def date_form(request):
     return render(request, 'reservations/reservation_date.html')
