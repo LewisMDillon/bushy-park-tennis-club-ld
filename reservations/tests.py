@@ -383,3 +383,30 @@ class ReservationViewTestCase(TestCase):
             # means the deletion was successful
             self.assertNotEqual(deletedReservationId, newLastReservationId)
 
+    def test_date_form_render(self):
+        """
+        First, checks that access tothe page is denied without user login.
+        Then, checks that the date form page is rendered properly when
+        accessed by logged-in user
+        """
+
+        # Check that access to the page is denied without login
+        # (redirected to login page, hence error 302, not 403)
+        response = self.client.get('/reserve/date/')
+        self.assertEqual(response.status_code, 302)
+
+        # Get the second most recently created user (testUser)
+        test_user = User.objects.filter().order_by('-pk')[1]
+
+        # Check that the user is correctly retrieved
+        self.assertEqual(test_user.username, 'testUser')
+
+        # Log in as testUser
+        self.client.force_login(test_user)
+
+        # Check that the page is correctly rendered
+        response = self.client.get('/reserve/date/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response, 'reservations/reservation_date.html', 'website/base.html'
+            )
