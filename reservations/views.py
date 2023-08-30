@@ -34,14 +34,6 @@ class ReservationListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
             )
         context['date_search_input'] = date_search_input
 
-        # ----- Timeslot Search -----
-        timeslot_search_input = self.request.GET.get('timeslot-search') or ''
-        if timeslot_search_input:
-            context['reservations'] = context['reservations'].filter(
-                timeslot=timeslot_search_input
-            )
-        context['timeslot_search_input'] = timeslot_search_input
-
         # ----- Name Search -----
         name_search_input = self.request.GET.get('name-search') or ''
         if name_search_input:
@@ -63,7 +55,6 @@ class ReservationUserListView(LoginRequiredMixin, ListView):
     template_name = 'reservations/reservation_user_list.html'
     context_object_name = 'reservations'
     ordering = ['date', 'timeslot']
-    # paginate_by = 10
 
     def get_context_data(self, **kwargs):
         today = datetime.date.today()
