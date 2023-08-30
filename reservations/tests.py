@@ -164,3 +164,59 @@ class ReservationViewTestCase(TestCase):
         # Check that the context item is passed in
         self.assertTrue(response.context['reservations'])
 
+    def test_reservation_user_list_render_context(self):
+        """
+        First, checks that the page can only be accessed by users with
+        staff privileges. Then tests that the reservation list page is
+        rendered properly and all of the correct context is passed into
+        the page
+        """
+
+        # Get the second most recently created user (testUser)
+        test_user = User.objects.filter().order_by('-pk')[1]
+
+        # Check that the user is correctly retrieved
+        self.assertEqual(test_user.username, 'testUser')
+
+        # Log in as testUser
+        self.client.force_login(test_user)
+
+        # access reservation user list page
+        response = self.client.get('/reserve/reservations-user')
+
+        # Check that the page is rendered properly
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            'reservations/reservation_user_list.html',
+            'website/base.html'
+            )
+        # Check that the context item is passed in
+        self.assertTrue(response.context['reservations'])
+ 
+    def test_reservation_detail_render_context(self):
+        """
+        Tests the url path by passing in the primary key of new test
+        post. Checks that the post detail page is rendered properly.
+        Checks that the post detail view matches the test post passed
+        into the url.
+        """
+        # Tests the url path
+        reservation1 = Reservation.objects.latest('date_created')
+        response = self.client.get(f'/reserve/{reservation1.pk}/')
+
+        # Checks that the page renders correctly
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            'reservations/reservation_detail.html',
+            'website/base.html'
+            )
+
+        # Cofirms that the reservation_detail view is
+        # displaying the correct reservation.
+        reservation_string_title = str(reservation1.title)
+        reservation_string_created_by = str(reservation1.created_by)
+
+        self.assertEqual((reservation_string_title), ("test_reservation"))
+        self.assertEqual((reservation_string_created_by), ("testUser"))
