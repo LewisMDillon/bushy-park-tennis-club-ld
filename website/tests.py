@@ -371,3 +371,48 @@ class WebsiteViewTestCase(TestCase):
             # same one that we tried to delete, if not, that
             # means the deletion was successful
             self.assertNotEqual(deletedPostId, newLastPostId)
+
+    def test_about_render(self):
+        """
+        Tests that the about page is rendered properly
+        """
+
+        response = self.client.get('/about')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response, 'website/about.html', 'website/base.html'
+            )
+
+    def test_contact_render(self):
+        """
+        Tests that the about page is rendered properly
+        """
+
+        response = self.client.get('/contact')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response, 'website/contact.html', 'website/base.html'
+            )
+
+    def test_base_render(self):
+        """
+        Tests that the base template is rendered properly
+        """
+
+        response = self.client.get('/base')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response, 'website/base.html'
+            )
+
+    def test_render_404_error(self):
+        """
+        Confirms the rendering of a 404 page when an invalid post
+        is entered.
+        """
+
+        response = self.client.get('/post/0/')
+        self.assertEqual(response.status_code, 404)
+        self.assertTemplateUsed(
+            response, '404.html', 'base.html'
+        )
