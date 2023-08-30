@@ -247,3 +247,51 @@ class ReservationViewTestCase(TestCase):
 
         self.assertEqual((reservation_string_title), ("test_reservation"))
         self.assertEqual((reservation_string_created_by), ("testUser"))
+
+    def test_reservation_create_render_form(self):
+        """
+        Creates a sample reservation using the page form. Then, checks
+        that that sample reservation was created successfully by
+        checking that the newest reservation is not the same
+        as the reservation that existed previously
+        """
+
+        # Get the second most recently created user (testUser)
+        test_user = User.objects.filter().order_by('-pk')[1]
+
+        # Check that the user is correctly retrieved
+        self.assertEqual(test_user.username, 'testUser')
+
+        # Log in as testUser
+        self.client.force_login(test_user)
+
+        # Get the ID of the most recently created reservation
+        originalReservation = Reservation.objects.latest('date_created')
+        originalReservationId = originalReservation.pk
+
+        # Create a new test reservation using the page form
+        response = self.client.post(('/reserve/new/'), {
+            'title': 'new_test_reservation',
+            'created_by': test_user,
+            'date_created': datetime.datetime.now(),
+            'date': '2024-05-06',
+            'timeslot': 0,
+            'court_number': 0
+            })
+
+        # Get the most recent reservation
+        # (should be new_test_reservation that we just created)
+        newTestReservation = Reservation.objects.latest('date_created')
+        newTestReservationId = newTestReservation.pk
+
+        # Check that the most recent reservation created is
+        # not the original reservation, meaning a new one
+        # was successfully created
+        self.assertNotEqual((originalReservationId), (newTestReservationId))
+
+        # Check that the page renders properly
+        response = self.client.get(f'/reserve/new/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response, 'reservations/reservation_form.html', 'website/base.html'
+            )
