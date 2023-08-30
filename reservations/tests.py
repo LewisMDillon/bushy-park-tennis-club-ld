@@ -1,11 +1,13 @@
 import datetime
 
+from django.core import mail
 from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import Reservation
 from django.utils import timezone
 
 
+# ------------ MODEL TESTING ------------
 class TestReservation(TestCase):
     """Tests the model for the reservations app."""
     def setUp(self):
@@ -30,7 +32,7 @@ class TestReservation(TestCase):
         title = "test_reservation"
         created_by = user1
         date_created = timezone.now()
-        date = "2023-11-11"
+        date = "2024-05-05"
         timeslot = 0
         court_number = 0
         reservation1 = Reservation.objects.create(
@@ -250,7 +252,8 @@ class ReservationViewTestCase(TestCase):
 
     def test_reservation_create_render_form(self):
         """
-        Creates a sample reservation using the page form. Then, checks
+        Creates a sample reservation using the page form. Next,
+        checks if the confirmation email is sent. Then, checks
         that that sample reservation was created successfully by
         checking that the newest reservation is not the same
         as the reservation that existed previously
@@ -278,6 +281,9 @@ class ReservationViewTestCase(TestCase):
             'timeslot': 0,
             'court_number': 0
             })
+        
+        # Check if the confirmation email is sent
+        self.assertEqual(len(mail.outbox), 1)
 
         # Get the most recent reservation
         # (should be new_test_reservation that we just created)
