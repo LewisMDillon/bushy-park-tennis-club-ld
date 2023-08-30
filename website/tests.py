@@ -139,7 +139,7 @@ class WebsiteViewTestCase(TestCase):
 
     def test_home_render_context(self):
         """
-        Tests that the home page is rendered properly and all of 
+        Tests that the home page is rendered properly and all of
         the correct context is passed into the page
         """
 
@@ -156,7 +156,7 @@ class WebsiteViewTestCase(TestCase):
 
     def test_news_render_context(self):
         """
-        Tests that the latest news page is rendered properly and all of 
+        Tests that the latest news page is rendered properly and all of
         the correct context is passed into the page
         """
 
@@ -242,7 +242,7 @@ class WebsiteViewTestCase(TestCase):
             'author': test_user_staff
             })
 
-        # Get the most recent post 
+        # Get the most recent post
         # (should be new_test_post that we just created)
         newTestPost = Post.objects.latest('date_posted')
 
@@ -259,7 +259,7 @@ class WebsiteViewTestCase(TestCase):
         First, tests that the page can be accessed only by
         users with staff/superuser privileges. Next, updates
         the most recent post's title, subtitle and content using the
-        update page form. Lastly, checks that that sample post was 
+        update page form. Lastly, checks that that sample post was
         updated successfully
         """
         # Get the most recently created user (testUserStaff)
@@ -314,3 +314,60 @@ class WebsiteViewTestCase(TestCase):
         self.assertEqual((post_string_subtitle), ("new_test_subtitle_updated"))
         self.assertEqual((post_string_content), ("new_test_content_updated"))
         self.assertEqual((post_string_author), ("testUserStaff"))
+
+    def test_post_delete_staff_render_form(self):
+        """
+        First, tests that the delete page can be accessed only by
+        users with staff/superuser privileges. Next, deletes the
+        most recent post. Lastly, checks that the post was deleted
+        successfuly.
+        """
+        # Get the most recently created user (testUserStaff)
+        test_user_staff = User.objects.latest('date_joined')
+
+        # Get the second most recently created user (testUser)
+        test_user = User.objects.filter().order_by('-pk')[1]
+
+        # Check that the two users are correctly retrieved
+        self.assertEqual(test_user_staff.username, 'testUserStaff')
+        self.assertEqual(test_user.username, 'testUser')
+
+        # Get the most recent post
+        postToDelete = Post.objects.latest('date_posted')
+
+        # Log in as testUser (no staff privileges)
+        self.client.force_login(test_user)
+
+        # Check that the url path works
+        response = self.client.get(f'/post/{postToDelete.pk}/delete/')
+
+        # Check that access to the page is denied
+        self.assertEqual(response.status_code, 403)
+
+        # Log in as testUserStaff (has superuser privileges)
+        self.client.force_login(test_user_staff)
+        response = self.client.get(f'/post/{postToDelete.pk}/delete/')
+
+        # Check that access to the page is granted
+        self.assertEqual(response.status_code, 200)
+
+        # Get the to-be-deleted post's ID
+        deletedPostId = (postToDelete.pk)
+
+        # Delete the post using the delete view
+        response = self.client.post(
+            f'/post/{postToDelete.pk}/delete/', args='1'
+            )
+
+        # Check if there are any posts in the database,
+        # if not, that means that the deletion was successful
+        if Post.objects.exists():
+
+            # Get the ID of the last post in the database
+            newLastPost = Post.objects.latest('date_posted')
+            newLastPostId = newLastPost.pk
+
+            # Check if the last post in the database is the
+            # same one that we tried to delete, if not, that
+            # means the deletion was successful
+            self.assertNotEqual(deletedPostId, newLastPostId)
