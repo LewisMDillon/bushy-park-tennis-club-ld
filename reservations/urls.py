@@ -3,7 +3,6 @@ from .views import (
     ReservationListView,
     ReservationUserListView,
     ReservationDetailView,
-    ReservationTimesView,
     ReservationCreateView,
     ReservationDeleteView,
     )
@@ -30,7 +29,5 @@ urlpatterns = [
         '<int:pk>/delete/',
         ReservationDeleteView.as_view(), name='reservation-delete'
         ),
-
-    path('times/', ReservationTimesView.as_view(), name='reservation-times'),
     path('date/', views.date_form, name='reservation-date'),
 ]
