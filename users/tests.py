@@ -105,3 +105,59 @@ class TestUserViews(TestCase):
         newest_user = User.objects.latest('date_joined')
         self.assertEqual(newest_user.username, 'newTestUser')
 
+    def test_user_profile_login_render_form(self):
+        """
+        First, tests that the profile page can be accessed
+        only by logged in users. Next, checks that the profile
+        page renders correctly. Then, updates the logged-in user's
+        profile details using the view form. Lastly, checks that
+        the user's profile details were updated successfully
+        """
+        # Get the most recently created user (testUserStaff)
+        test_user_staff = User.objects.latest('date_joined')
+
+        # Check that the user is correctly retrieved
+        self.assertEqual(test_user_staff.username, 'testUserStaff')
+
+        # Check that page cannot be accessed without user login
+        # (redirects to login page, hence error 302, not 403)
+        response = self.client.get('/profile/')
+        self.assertEqual(response.status_code, 302)
+
+        # Log in as testUserStaff
+        self.client.force_login(test_user_staff)
+
+        # Check that page access is granted
+        response = self.client.get('/profile/')
+        self.assertEqual(response.status_code, 200)
+
+        # Check that the page renders properly
+        self.assertTemplateUsed(
+            response, 'users/profile.html', 'website/base.html'
+            )
+
+        # Updates testUserStaff's profile with new details
+        # using the profile view form
+        response = self.client.post(('/profile/'), {
+            'first_name': 'TestUpdated',
+            'last_name': 'UserUpdated',
+            'username': 'testUserStaffUpdated',
+            'email': 'testuser2updated@test.com',
+            'password1': 'default123',
+            'password2': 'default123'
+            })
+
+        # Check if testUserStaff's details have been successfully updated
+        test_user_staff_updated = User.objects.latest('date_joined')
+        self.assertEqual(
+            test_user_staff_updated.first_name, 'TestUpdated'
+            )
+        self.assertEqual(
+            test_user_staff_updated.last_name, 'UserUpdated'
+            )
+        self.assertEqual(
+            test_user_staff_updated.username, 'testUserStaffUpdated'
+            )
+        self.assertEqual(
+            test_user_staff_updated.email, 'testuser2updated@test.com'
+            )
