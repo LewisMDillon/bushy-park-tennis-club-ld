@@ -59,7 +59,7 @@ class TestPost(TestCase):
 
 class WebsiteViewTestCase(TestCase):
     """
-    Test case for testing webite views.
+    Test case for testing website views.
     """
 
     def setUp(self):
@@ -385,7 +385,7 @@ class WebsiteViewTestCase(TestCase):
 
     def test_contact_render(self):
         """
-        Tests that the about page is rendered properly
+        Tests that the contact page is rendered properly
         """
 
         response = self.client.get('/contact')
