@@ -80,6 +80,7 @@ class WebsiteViewTestCase(TestCase):
         password = "default123"
         first_name = "Test"
         last_name = "User"
+
         user1 = User.objects.create(
             username=username1,
             email=email1,
@@ -107,7 +108,7 @@ class WebsiteViewTestCase(TestCase):
         subtitle = "test_subtitle"
         content = "test_content"
         date_posted = timezone.now()
-        author = user1
+        author = user2
         post1 = Post.objects.create(
             title=title,
             subtitle=subtitle,
@@ -190,9 +191,9 @@ class WebsiteViewTestCase(TestCase):
         post_string_author = str(post1.author)
 
         self.assertEqual((post_string_title), ("test_post"))
-        self.assertEqual((post_string_author), ("testUser"))
+        self.assertEqual((post_string_author), ("testUserStaff"))
 
-    def test_post_create_render_context(self):
+    def test_post_create_staff_render_form(self):
         """
         First, tests that the page can be accessed only by
         users with staff/superuser privileges. Next, creates
@@ -253,3 +254,63 @@ class WebsiteViewTestCase(TestCase):
         self.assertEqual((post_string_title), ("new_test_post"))
         self.assertEqual((post_string_author), ("testUserStaff"))
 
+    def test_post_update_staff_render_form(self):
+        """
+        First, tests that the page can be accessed only by
+        users with staff/superuser privileges. Next, updates
+        the most recent post's title, subtitle and content using the
+        update page form. Lastly, checks that that sample post was 
+        updated successfully
+        """
+        # Get the most recently created user (testUserStaff)
+        test_user_staff = User.objects.latest('date_joined')
+
+        # Get the second most recently created user (testUser)
+        test_user = User.objects.filter().order_by('-pk')[1]
+
+        # Check that the two users are correctly retrieved
+        self.assertEqual(test_user_staff.username, 'testUserStaff')
+        self.assertEqual(test_user.username, 'testUser')
+
+        # Get the most recent post
+        # (should be newPost that was just created)
+        postToUpdate = Post.objects.latest('date_posted')
+
+        # Log in as testUser (no staff privileges)
+        self.client.force_login(test_user)
+
+        # Check that the url path works
+        response = self.client.get(f'/post/{postToUpdate.pk}/update/')
+
+        # Check that access to the page is denied
+        self.assertEqual(response.status_code, 403)
+
+        # Log in as testUserStaff (has superuser privileges)
+        self.client.force_login(test_user_staff)
+        response = self.client.get(f'/post/{postToUpdate.pk}/update/')
+
+        # Check that access to the page is granted
+        self.assertEqual(response.status_code, 200)
+
+        response = self.client.post((f'/post/{postToUpdate.pk}/update/'), {
+            'title': 'new_test_post_updated',
+            'subtitle': 'new_test_subtitle_updated',
+            'content': 'new_test_content_updated',
+            'date_posted': datetime.datetime.now(),
+            'author': test_user_staff
+            })
+
+        # Get the most recent post
+        # (should be new_test_post_updated that we just updated)
+        newTestPost = Post.objects.latest('date_posted')
+
+        post_string_title = str(newTestPost.title)
+        post_string_subtitle = str(newTestPost.subtitle)
+        post_string_content = str(newTestPost.content)
+        post_string_author = str(newTestPost.author)
+
+        # Check that the post has been successfuly updated
+        self.assertEqual((post_string_title), ("new_test_post_updated"))
+        self.assertEqual((post_string_subtitle), ("new_test_subtitle_updated"))
+        self.assertEqual((post_string_content), ("new_test_content_updated"))
+        self.assertEqual((post_string_author), ("testUserStaff"))
