@@ -122,6 +122,23 @@ class ReservationViewTestCase(TestCase):
 
         reservation1.save()
 
+        title = "test_reservation2"
+        created_by = user2
+        date_created = timezone.now()
+        date = "2024-05-07"
+        timeslot = 0
+        court_number = 0
+        reservation2 = Reservation.objects.create(
+            title=title,
+            created_by=created_by,
+            date_created=date_created,
+            date=date,
+            timeslot=timeslot,
+            court_number=court_number,
+            )
+
+        reservation2.save()
+
     def test_reservation_list_staff_render_context(self):
         """
         First, checks that the reservation list page can only be
@@ -195,33 +212,6 @@ class ReservationViewTestCase(TestCase):
             )
         # Check that the context item is passed in
         self.assertTrue(response.context['reservations'])
- 
-    def test_reservation_detail_render_context(self):
-        """
-        Tests the url path by passing in the primary key of new test
-        post. Checks that the post detail page is rendered properly.
-        Checks that the post detail view matches the test post passed
-        into the url.
-        """
-        # Tests the url path
-        reservation1 = Reservation.objects.latest('date_created')
-        response = self.client.get(f'/reserve/{reservation1.pk}/')
-
-        # Checks that the page renders correctly
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(
-            response,
-            'reservations/reservation_detail.html',
-            'website/base.html'
-            )
-
-        # Cofirms that the reservation_detail view is
-        # displaying the correct reservation.
-        reservation_string_title = str(reservation1.title)
-        reservation_string_created_by = str(reservation1.created_by)
-
-        self.assertEqual((reservation_string_title), ("test_reservation"))
-        self.assertEqual((reservation_string_created_by), ("testUser"))
 
     def test_reservation_detail_render_context(self):
         """
@@ -249,6 +239,33 @@ class ReservationViewTestCase(TestCase):
 
         self.assertEqual((reservation_string_title), ("test_reservation"))
         self.assertEqual((reservation_string_created_by), ("testUser"))
+
+    def test_reservation_detail_render_context(self):
+        """
+        Tests the url path by passing in the primary key of new test
+        post. Checks that the post detail page is rendered properly.
+        Checks that the post detail view matches the test post passed
+        into the url.
+        """
+        # Tests the url path
+        reservation1 = Reservation.objects.latest('date_created')
+        response = self.client.get(f'/reserve/{reservation1.pk}/')
+
+        # Checks that the page renders correctly
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            'reservations/reservation_detail.html',
+            'website/base.html'
+            )
+
+        # Cofirms that the reservation_detail view is
+        # displaying the correct reservation.
+        reservation_string_title = str(reservation1.title)
+        reservation_string_created_by = str(reservation1.created_by)
+
+        self.assertEqual((reservation_string_title), ("test_reservation2"))
+        self.assertEqual((reservation_string_created_by), ("testUserStaff"))
 
     def test_reservation_create_render_form(self):
         """
@@ -281,7 +298,7 @@ class ReservationViewTestCase(TestCase):
             'timeslot': 0,
             'court_number': 0
             })
-        
+
         # Check if the confirmation email is sent
         self.assertEqual(len(mail.outbox), 1)
 
@@ -301,3 +318,68 @@ class ReservationViewTestCase(TestCase):
         self.assertTemplateUsed(
             response, 'reservations/reservation_form.html', 'website/base.html'
             )
+
+    def test_reservation_delete_render_form(self):
+        """
+        First, logs in as user who is not the creator of the reservation &
+        checks that access to delete is denied. Next, logs in as the
+        creator and deletes the most recent post using the delete view.
+        Lastly, checks that the post was deleted successfuly.
+        """
+
+        # Get the most recently created user (testUserStaff)
+        test_user_staff = User.objects.latest('date_joined')
+
+        # Get the second most recently created user (testUser)
+        test_user = User.objects.filter().order_by('-pk')[1]
+
+        # Check that the two users are correctly retrieved
+        self.assertEqual(test_user_staff.username, 'testUserStaff')
+        self.assertEqual(test_user.username, 'testUser')
+
+        # Get the most recent reservation
+        reservationToDelete = Reservation.objects.latest('date_created')
+
+        # Log in as testUser (not the creator of
+        # the reservation)
+        self.client.force_login(test_user)
+
+        # Check that the url path works
+        response = self.client.get(
+            f'/reserve/{reservationToDelete.pk}/delete/'
+            )
+
+        # Check that access to the page is denied
+        self.assertEqual(response.status_code, 403)
+
+        # Log in as testUserStaff (the creator of
+        # the reservation)
+        self.client.force_login(test_user_staff)
+
+        # Check that access to the page is granted
+        response = self.client.get(
+            f'/reserve/{reservationToDelete.pk}/delete/'
+            )
+        self.assertEqual(response.status_code, 200)
+
+        # Get the to-be-deleted post's ID
+        deletedReservationId = (reservationToDelete.pk)
+
+        # Delete the post using the delete view
+        response = self.client.post(
+            f'/reserve/{reservationToDelete.pk}/delete/', args='1'
+            )
+
+        # Check if there are any reservations in the database,
+        # if not, that means that the deletion was successful
+        if Reservation.objects.exists():
+
+            # Get the ID of the last reservation in the database
+            newLastReservation = Reservation.objects.latest('date_created')
+            newLastReservationId = newLastReservation.pk
+
+            # Check if the last reservation in the database is the
+            # same one that we tried to delete, if not, that
+            # means the deletion was successful
+            self.assertNotEqual(deletedReservationId, newLastReservationId)
+
