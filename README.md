@@ -98,10 +98,83 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 
 ![screenshot](documentation/features/sitepages/reservation-page.png)
 
+### User Features
 
-Welcome LewisMDillon,
+- **User Registration**
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+    - Users can register for an account using a front-end form. This creates a user object in the database and automatically secures the user's sensitive information.
+
+![screenshot](documentation/features/user/register.png)
+
+- **User Login**
+
+    - Users who have made an account can quickly and easily log in to their account in order to access the login-required functionality of the site.
+
+![screenshot](documentation/features/user/login.png)
+
+- **User Logout**
+
+    - Users who are logged in can easily log out in order to stop access to their account-based information and functionality.
+
+![screenshot](documentation/features/user/logout.png)
+
+- **User Password Recovery**
+
+    - Users who have forgotten their password can recover their password via the forgot password link on the login page. Users will enter their email and get a password reset link sent to their account email which they can use to set a new password.
+
+![screenshot](documentation/features/user/password-recover.png)
+
+- **Login Redirect**
+
+    - Users who are not logged in who attempt to access an area of the site which requires login are redirected to the login page. After logging in, they are sent to the page they first intended to visit.
+
+![screenshot](documentation/features/user/login-redirect.png)
+
+- **User Profile Creation**
+
+    - User profiles are automatically created upon user registration. This assigns each user a profile which they can use to see/update their user information.
+
+![screenshot](documentation/features/user/profile-creation.png)
+
+- **User Profile Update**
+
+    - Users can update their profile information using a front-end form located on their user profile page. This allows users to update profile information or correct possible mistakes made at registration.
+
+![screenshot](documentation/features/user/profile-update.png)
+
+- **User Court Reservations**
+
+    - Users can use a front-end form to reserve a court to play tennis on at the tennis club. Users are presented with a very simple form, which is easy to fill out, and allows them to quickly 
+      make reservations.
+
+      The reservation form contains two steps. First, the user is prompted to select the date on which they would like to play, dates in the past are automatically disabled. Next the user is prompted to choose the timeslot on which they would like to play. Timeslots are automatically presented according to the club's opening hours.
+
+![screenshot](documentation/features/user/court-reservation.png)
+
+- **Automatic Timeslot Availability Checking**
+
+    - In the court reservation form, when selecting a timeslot, users can see which timeslots are fully booked, as well as timeslots which have limited availability on their chosen date. Timeslots which are fully booked (all 9 courts already booked at that time) are automatically disabled and unselectable by the user. Timeslots which have limited availability (courts with 6 to 8 bookings) are automatically colored orange and the user can see a 'limited availaility' message beside the timeslot.
+
+![screenshot](documentation/features/user/timeslot-availability.png)
+
+- **Automatic Court Assignment**
+
+    - In the court reservation form, users do not need to select a court on which to play. Instead, the backend functionality of the form automatically assigns the user an available court based on the amount of bookings that have already been placed on the selected date and timeslot.
+
+![screenshot](documentation/features/user/court-assignment.png)
+
+- **User Email Confirmations**
+
+    - After making a reservation, the site automatically sends the user a confirmation email which contains their reservation details, as well as instructions on how to cancel the reservation.
+
+![screenshot](documentation/features/user/email-confirmation1.png)
+![screenshot](documentation/features/user/email-confirmation2.png)
+
+- **User Reservation Cancellation**
+
+    - Users can cancel their existing reservations using front-end functionality on the site, without having to call or visit the tennis club. On the reservation details page, users can see a clear and obvious 'cancel reservation' button which will take them to a confirmation page, before deleting their reservation. 
+
+![screenshot](documentation/features/user/cancel-reservation.png)
 
 You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
