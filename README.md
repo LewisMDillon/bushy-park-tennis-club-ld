@@ -31,6 +31,73 @@ I used [coolors.co](https://coolors.co/000000-333333-a1a1a1-f5f5f5-ffffff-507e50
 All user stories can be found in a linked GitHub project [here](https://github.com/users/LewisMDillon/projects/4)
 
 
+## Features
+
+## Existing Features
+
+### Site Pages
+
+- **Homepage**
+
+    - The main homepage for the site, hero image is large and striking. Large heading tells users they are in the right place. Call to action button to invite users to enter and explore the site.
+
+![screenshot](documentation/features/sitepages/home.png)
+
+- **About Page**
+
+    - About page. Gives users essential information about the tennis club. Text content interspersed with pictures helps to break up the page and keep the user engaged with the presented information. 
+
+![screenshot](documentation/features/sitepages/about.png)
+
+- **News Page**
+
+    - News Page. Displays news posts made by site staff. User can see the most up-to-date information about events and other things happening at the club. Posts are paginated and displayed in a pleasing layout, utilising images to draw the user in.
+
+![screenshot](documentation/features/sitepages/news.png)
+
+- **Contact Page**
+
+    - Contact Page. Users can see contact information for the tennis club, including 
+    a contact email address and location information. An embedded Google Maps widget allows users to see the club's exact location.
+
+![screenshot](documentation/features/sitepages/contact.png)
+
+- **Register Page**
+
+    - Register Page. Displays a form that new users of the site can fill in and make an account. The form is short, simple, and clean to encourage users to use it.
+
+![screenshot](documentation/features/sitepages/register.png)
+
+- **Login Page**
+
+    - Login Page. Displays a login form that existing users can use to log in to the site. Two simple input fields for username and password make it easy for users to log in tto their account. A Forgot Password link takes users to another page where they can recover their password. A sign up button at the bottom of the page lets users who do not yet have an account easily find the register page
+
+![screenshot](documentation/features/sitepages/login.png)
+
+- **Profile Page**
+
+    - Profile page. Displays a user's profile information. Lets a user see their relevant profile information in a clean and simple way, and contains an update form that users can use to update their profile information.
+
+![screenshot](documentation/features/sitepages/profile.png)
+
+- **My Reservations Page**
+
+    - My reservations page. Displays a formatted table populated with the user's upcoming court reservations. Users can easily see details of their reservations as well as links to a detail page of each reservation where it can be deleted if the user wishes.
+
+![screenshot](documentation/features/sitepages/my-reservations.png)
+
+- **Logout Page**
+
+    - Logout Page. A simple page confirming that the user has logged out of their account. Displays a log in again button in case the user wishes to log back in.
+
+![screenshot](documentation/features/sitepages/logout.png)
+
+- **Reservation Page**
+
+    - Court reservation page. Displays a form for users to reserve a court at the tennis club. The form is simple and easy to use, with only two steps, letting the user quickly and easily make bookings. 
+
+![screenshot](documentation/features/sitepages/reservation-page.png)
+
 
 Welcome LewisMDillon,
 
