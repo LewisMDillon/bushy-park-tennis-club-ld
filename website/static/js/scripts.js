@@ -26,9 +26,6 @@ let reservationList = document.getElementsByClassName("reservation-dates")
 
 
 // CALCULATE COURT AVAILABILITY
-
-console.log(`The user's chosen date is: ${userDate}`) // delete this
-
 /*
 create empty list - will be a list of available timeslots
 for the user to choose from
@@ -115,21 +112,6 @@ for (let reservation of reservationList) {
     }
 }
 
-// CONSOLE LOG THE TIME SLOT LISTS & COUNT RESERVATIONS -- DELETE THIS
- console.log(`9:00 = ${courtList0} - ${courtList0.length} reservations`)
- console.log(`10:00 = ${courtList1} - ${courtList1.length} reservations`)
- console.log(`11:00 = ${courtList2} - ${courtList2.length} reservations`)
- console.log(`12:00 = ${courtList3} - ${courtList3.length} reservations`)
- console.log(`13:00 = ${courtList4} - ${courtList4.length} reservations`)
- console.log(`14:00 = ${courtList5} - ${courtList5.length} reservations`)
- console.log(`15:00 = ${courtList6} - ${courtList6.length} reservations`)
- console.log(`16:00 = ${courtList7} - ${courtList7.length} reservations`)
- console.log(`17:00 = ${courtList8} - ${courtList8.length} reservations`)
- console.log(`18:00 = ${courtList9} - ${courtList9.length} reservations`)
- console.log(`19:00 = ${courtList10} - ${courtList10.length} reservations`)
- console.log(`20:00 = ${courtList11} - ${courtList11.length} reservations`)
-
- 
 // Loop through the reservations and add all timeslot items to timeList
 for (let reservation of reservationList) {
         let fullString = reservation.innerText
@@ -251,7 +233,4 @@ function pickCourt() {
     let courtField = document.getElementById("id_court_number")
     courtField.value = parseInt(bookings) // don't need (bookings + 1) here since court numbers begin at 0
 
-    console.log(selectedTime)
-    console.log(`There are ${bookings} reservations at that time`)
-    console.log(`Therefore the reservation will be on Court ${bookings + 1}`)
 }
