@@ -5,12 +5,17 @@
 let formUrl = document.getElementById("form-url")
 let newURL = formUrl.baseURI
 
-// gets the last 10 characters of the url (this is the user's
-// chosen date in this format: YYYY-MM-DD)
+
+/*
+Gets the last 10 characters of the url (this is the user's
+chosen date in this format: YYYY-MM-DD)
+*/
 var userDate = newURL.slice(-10);
 
-// Sets the hidden date input of the form to the
-// value of the user's chosen date
+/*
+Sets the hidden date input of the form to the
+value of the user's chosen date
+*/
 let dateField = document.getElementById("id_date")
 dateField.value = userDate
 
@@ -242,7 +247,7 @@ function pickCourt() {
         bookings = courtList11.length
     }
 
-    // get the hidden court input field and assign it the value of bookings
+    // get the hidden court_number input field and assign it the value of bookings
     let courtField = document.getElementById("id_court_number")
     courtField.value = parseInt(bookings) // don't need (bookings + 1) here since court numbers begin at 0
 
