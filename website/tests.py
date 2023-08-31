@@ -407,8 +407,8 @@ class WebsiteViewTestCase(TestCase):
 
     def test_render_404_error(self):
         """
-        Confirms the rendering of a 404 page when an invalid post
-        is entered.
+        Confirms the rendering of a 404 page when an invalid 
+        post ID is entered.
         """
 
         response = self.client.get('/post/0/')
