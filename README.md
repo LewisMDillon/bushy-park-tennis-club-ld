@@ -176,61 +176,56 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 
 ![screenshot](documentation/features/user/cancel-reservation.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+### Admin/Staff Features
 
-## Gitpod Reminders
+- **Create News Posts**
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+    - Administrators can use a front-end form to create new site news posts. The form is simple and clean and automatically formats and displays the created post in the same manner as existing posts.
 
-`python3 -m http.server`
+![screenshot](documentation/features/admin/create-post.png)
 
-A blue button should appear to click: _Make Public_,
+- **Update News Posts**
 
-Another blue button should appear to click: _Open Browser_.
+    - Administrators can use a front-end form to update existing posts. If the current logged-in user has staff privileges, an update button will appear over posts which allows that user to edit the information in posts.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![screenshot](documentation/features/admin/update-post.png)
 
-A blue button should appear to click: _Make Public_,
+- **Delete News Posts**
 
-Another blue button should appear to click: _Open Browser_.
+    - Administrators can use a front-end form to delete existing posts. If the current logged-in user has staff privileges, an delete button will appear over posts which allows that user to delete that post.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![screenshot](documentation/features/admin/delete-post.png)
 
-To log into the Heroku toolbelt CLI:
+- **Latest News Posts On Homepage**
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+    - The most recent post, along with the two next-most recent posts are automatically displayed on the homepage. This allows users of the site to see the most up-to-date site news at a glance.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![screenshot](documentation/features/admin/homepage-news.png)
 
-------
+- **Master Reservation List**
 
-## Release History
+    - Administrators have access to a master list of all the club reservations. The list is ordered by reverse date by default, which helps to show administrators the most relevant reservations first. There are two search boxes at the top of the list page, which can be used to find reservations on certain dates, or to find reservations made by a specific user.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![screenshot](documentation/features/admin/reservation-list.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- **Delete Reservations For Users**
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+    - Administrators, using the master reservation list, can view the details of another user's reservation, as well as delete that reservation on behalf of that user.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![screenshot](documentation/features/admin/reservation-delete.png)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- **Title for feature #**
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+    - Details
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![screenshot](documentation/feature/admin/.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- **Title for feature #**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+    - Details
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![screenshot](documentation/feature/admin/.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
 **April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
