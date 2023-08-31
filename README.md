@@ -26,6 +26,11 @@ I used [coolors.co](https://coolors.co/000000-333333-a1a1a1-f5f5f5-ffffff-507e50
 
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
 
+## User Stories
+
+All user stories can be found in a linked GitHub project [here](https://github.com/users/LewisMDillon/projects/4)
+
+
 
 Welcome LewisMDillon,
 
