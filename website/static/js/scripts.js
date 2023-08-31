@@ -1,33 +1,39 @@
-// function runTest() {
-//     console.log('the javascript function ran!')
-// }
-
-// runTest()
-
-
-
 //-------------RESERVATION FORM-------------
 
 // AUTOFILL DATEFIELD
+// Gets the url of the form
 let formUrl = document.getElementById("form-url")
 let newURL = formUrl.baseURI
 
+// gets the last 10 characters of the url (this is the user's
+// chosen date in this format: YYYY-MM-DD)
 var userDate = newURL.slice(-10);
 
+// Sets the hidden date input of the form to the
+// value of the user's chosen date
 let dateField = document.getElementById("id_date")
 dateField.value = userDate
 
 
 // GET RESERVATION LIST
+// gets the data of all previous reservations
 let reservationList = document.getElementsByClassName("reservation-dates")
 
 
 // CALCULATE COURT AVAILABILITY
 
-console.log(`The user's chosen date is: ${userDate}`)
+console.log(`The user's chosen date is: ${userDate}`) // delete this
 
+/*
+create empty list - will be a list of available timeslots
+for the user to choose from
+*/
 timeList = []
 
+/*
+create 12 empty lists for timeslots - one
+list for each timeslot on a given day 
+*/
 courtList0 = []
 courtList1 = []
 courtList2 = []
@@ -42,17 +48,29 @@ courtList10 = []
 courtList11 = []
 
 // SORT RESERVATIONS BY THEIR RESPECTIVE TIMESLOTS
+
 for (let reservation of reservationList) {
     let fullString = reservation.innerText
+
+    // extract the date and timeslot info from the data strings
     let date = fullString.substr(0, 10);
     let timeslot = ""
+
+    // check for longer data strings due to double-digit timeslot number
     if (fullString.length > 14) {
         timeslot = fullString.slice(11,13)
     }
     else {
         timeslot = fullString.slice(11, 12)
     }
+
+    // filter reservations by only those on user's chosen date
     if (date == userDate) {
+
+        /*
+        checks for bookings at all timeslots and adds an item to
+        the respective courtList, for each booking at that timeslot
+        */
         if (timeslot == "0") {
             courtList0.push(timeslot)
         }
@@ -92,7 +110,7 @@ for (let reservation of reservationList) {
     }
 }
 
-// CONSOLE LOG THE TIME SLOT LISTS & COUNT RESERVATIONS
+// CONSOLE LOG THE TIME SLOT LISTS & COUNT RESERVATIONS -- DELETE THIS
  console.log(`9:00 = ${courtList0} - ${courtList0.length} reservations`)
  console.log(`10:00 = ${courtList1} - ${courtList1.length} reservations`)
  console.log(`11:00 = ${courtList2} - ${courtList2.length} reservations`)
@@ -107,6 +125,7 @@ for (let reservation of reservationList) {
  console.log(`20:00 = ${courtList11} - ${courtList11.length} reservations`)
 
  
+// Loop through the reservations and add all timeslot items to timeList
 for (let reservation of reservationList) {
         let fullString = reservation.innerText
         let date = fullString.substr(0, 10);
@@ -122,7 +141,7 @@ for (let reservation of reservationList) {
         }
     }
 
-
+// Count the reservations in each timeslot
 let reservationCount = timeList.reduce(function (
     count,
     currentValue
@@ -136,35 +155,56 @@ let reservationCount = timeList.reduce(function (
 
 
 // AVAILABILITY CHECKER
+/*
+Disables fully booked timeslots (timeslots with 9 existing bookings)
+Adds 'limited availability' styling to busy timeslots (6 to 8 bookings)
+*/
 function AvailabilityCheck (timeslot) {
+
+    // get the timeslot input field
     let allTimes = document.getElementById("id_timeslot").children
     let targetTime = allTimes.item(timeslot + 1)
 
+    // disables fully booked timeslots
     if (reservationCount[timeslot] >= 9) {
         targetTime.disabled = true;
         targetTime.style.color = "red"
         targetTime.innerText += " -- Fully Booked "
     }
+
+    // adds styling to busy timeslots
     else if (reservationCount[timeslot] >= 6) {
         targetTime.style.color = "orange"
         targetTime.innerHTML = `${targetTime.innerHTML} -- Limited Availability `
     }
 }
 
+// Runs availability check for each timeslot
 for (let i = 0; i <= 11; i++) {
     AvailabilityCheck(i)
 }
 
 //AUTO COURT PICKER
-let timeField = document.getElementById("id_timeslot")
+/*
+Automatically selects the next available court
+based on the amount of existing bookings
+*/
 
+// Get the timeslot input field and add event listener
+let timeField = document.getElementById("id_timeslot")
 timeField.addEventListener("change", pickCourt);
 
 function pickCourt() {
     var timeField = document.getElementById("id_timeslot")
+
+    // Get a string of the user's selected time
     var selectedTimeFull = timeField.options[timeField.selectedIndex].text;
     var selectedTime = selectedTimeFull.slice(0, 5)
+
+    // create bookings variable to store number of bookings at each timeslot
     var bookings = 0
+
+    // assigns value to bookings variable based on user choice
     if (selectedTime == "09:00") {
         bookings = courtList0.length
     }
@@ -202,8 +242,9 @@ function pickCourt() {
         bookings = courtList11.length
     }
 
+    // get the hidden court input field and assign it the value of bookings
     let courtField = document.getElementById("id_court_number")
-    courtField.value = parseInt(bookings)
+    courtField.value = parseInt(bookings) // don't need (bookings + 1) here since court numbers begin at 0
 
     console.log(selectedTime)
     console.log(`There are ${bookings} reservations at that time`)
