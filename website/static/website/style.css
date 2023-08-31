@@ -419,13 +419,16 @@ a.article-title:hover {
     border-color: #263e21;
   }
 
-  .jumbotron-container-secondary-left {
-    padding-right: calc(var(--bs-gutter-x) * .2);
+  @media (min-width: 768px) {
+    .jumbotron-container-secondary-left {
+      padding-right: calc(var(--bs-gutter-x) * .2);
+    }
+  
+    .jumbotron-container-secondary-right {
+      padding-left: calc(var(--bs-gutter-x) * .2);
+    }
   }
 
-  .jumbotron-container-secondary-right {
-    padding-left: calc(var(--bs-gutter-x) * .2);
-  }
 
   #news-secondary-left button {
     color: #fff;
@@ -538,7 +541,7 @@ a.article-title:hover {
 }
 
 #dateForm {
-  margin-bottom: 200px;
+  margin-bottom: 220px;
   display: flex;
   flex-direction: row;
   width: 320px;
