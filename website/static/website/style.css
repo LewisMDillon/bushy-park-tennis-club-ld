@@ -419,11 +419,13 @@ a.article-title:hover {
     border-color: #263e21;
   }
 
-  .jumbotron-container-secondary {
+  .jumbotron-container-secondary-left {
     padding-right: calc(var(--bs-gutter-x) * .2);
-    padding-left: calc(var(--bs-gutter-x) * .2);
   }
 
+  .jumbotron-container-secondary-right {
+    padding-left: calc(var(--bs-gutter-x) * .2);
+  }
 
   #news-secondary-left button {
     color: #fff;
