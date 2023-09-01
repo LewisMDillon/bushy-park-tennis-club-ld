@@ -457,9 +457,39 @@ You can fork this repository by using the following steps:
 
 The local version, created on Gitpod, does not have the functionality to send confirmation emails. This is due to the fact that Gitpod blocks the necessary email port required to carry out this operation. Gitpod blocks this port by default due to concerns about email spam and it cannot be changed.
 
+## Credits
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Content
 
----
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
+| [StackOverflow](https://stackoverflow.com/questions/3005080/how-to-send-html-email-with-django-with-dynamic-content-in-it) | reservations/views.py | Django sendmail function with dynamic content |
+| [Stack Overflow](https://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input) | Reservation Form | Hide inputs on a Django built-in model form
+| [YouTube](https://www.youtube.com/watch?v=vmP1r6xiJog) | Reservation Form | passing data from one page to another in Django |
+| [Youtube - Corey Schafer](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) | entire site | how to set up a Django Project
+| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
+| [Bootstrap Components](https://getbootstrap.com/docs/5.3/examples/) | Navbar, Hero, About, Jumbotron, Footer | pre-built bootstrap components
+| [Date Picker date restriction](https://www.w3resource.com/javascript-exercises/javascript-date-exercise-2.php) | Reservation Form | tutorial on how to set date restrictions on the HTML date picker
+| [Neverlost-Thrift](https://github.com/Ri-Dearg/neverlost-thrift/blob/master/config/urls.py) | tests.py | My mentor's repository used as a reference for creating tests & error handler pages
+| [Codepen](https://codepen.io/uidesignhub/pen/vYmBKpj) | Error Handler pages | HTML & CSS template for error handler pages
+
+
+### Media
+
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Google Icon](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:sports_tennis:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=tennis) | entire site | image | favicon on all pages
+| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| [Unsplash](https://unsplash.com/photos/BlS47Eiu2iM) | homepage | image | hero image
+| [Unsplash](https://unsplash.com/photos/wvDELsJ_E20) | homepage, news page| image | news article image 1
+| [Unsplash](https://unsplash.com/photos/0wbYOLZwDPY) | homepage, news page| image | news article image 2
+| [Unsplash](https://unsplash.com/photos/2FKTyJqfWX8) | homepage, news page| image | news article image 3
+| [Freepik](https://www.freepik.com/free-photo/young-couple-playing-tennis-court_5507419.htm#from_view=detail_alsolike) | about page | image | 'open to all' image on about page
+| [Unsplash](https://unsplash.com/photos/vRb10tlBHVQ) | about page | image | 'fairly priced' image on about page
+
+The first image for 'Beautiful Facilities' on the about page is my own.
 
 Happy coding!
