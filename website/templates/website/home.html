@@ -2,81 +2,81 @@
 {% load static %}
 {% block head %}
 {% if "default" in latest_post.image.url %}
-<style>
-    #news-primary {
-        color: #fff;
-        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
-        url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-1_tyiujz.jpg");
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: center center;
-        background-size: cover;
-    }
-</style>
+    <style>
+        #news-primary {
+            color: #fff;
+            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+            url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-1_tyiujz.jpg");
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
 {% else %}
-<style>
-    #news-primary {
-        color: #fff;
-        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
-        url("{{ latest_post.image.url }}");
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: center center;
-        background-size: cover;
-    }
-</style>
+    <style>
+        #news-primary {
+            color: #fff;
+            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+            url("{{ latest_post.image.url }}");
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
 {% endif %}
 
 {% if "default" in second_last_post.image.url %}
-<style>
-    #news-secondary-left {
-        color: #fff;
-        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
-        url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-2_qo9b5o.jpg");
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: center center;
-        background-size: cover;
-    }
-</style>
+    <style>
+        #news-secondary-left {
+            color: #fff;
+            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+            url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-2_qo9b5o.jpg");
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
 {% else %}
-<style>
-    #news-secondary-left {
-        color: #fff;
-        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
-        url("{{ second_last_post.image.url }}");
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: center center;
-        background-size: cover;
-    }
-</style>
+    <style>
+        #news-secondary-left {
+            color: #fff;
+            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+            url("{{ second_last_post.image.url }}");
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
 {% endif %}
 
 {% if "default" in third_last_post.image.url %}
-<style>
-    #news-secondary-right {
-        color: #fff;
-        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
-        url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-3_vmjhxw.jpg");
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: center center;
-        background-size: cover;
-    }
-</style>
+    <style>
+        #news-secondary-right {
+            color: #fff;
+            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+            url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-3_vmjhxw.jpg");
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
 {% else %}
-<style>
-    #news-secondary-right {
-        color: #fff;
-        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
-        url("{{ third_last_post.image.url }}");
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: center center;
-        background-size: cover;
-    }
-</style>
+    <style>
+        #news-secondary-right {
+            color: #fff;
+            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+            url("{{ third_last_post.image.url }}");
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
 {% endif %}
 {% endblock head %}
 {% block content %}

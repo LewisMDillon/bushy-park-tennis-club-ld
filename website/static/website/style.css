@@ -312,6 +312,7 @@ a.article-title:hover {
   align-items: center;
 }
 
+
 .article-svg {
   width: 25px;
   height: 25px;
@@ -332,6 +333,12 @@ a.article-title:hover {
 
 #post-detail-container {
   max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  #post-detail-container {
+    width: 600px;
+  }
 }
 
 #post-content-container {
