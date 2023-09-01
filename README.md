@@ -236,7 +236,22 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 ![screenshot](documentation/feature/admin/.png)
 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Future Features
+
+
+- Update Reservations
+    - A user can edit their reservation, without deleting it and creating a new one. 
+         - Not in this deployment due to it breaking the automatic availability checks and automatic court assignment. Needs a restructure of reservation system to be implemented. 
+- Advanced reservation actions for admins
+    - An admin can make more advanced reservation actions, such as:
+        - block booking timeslots
+        - recurring reservations
+        - changing of available reservation dates
+        - changing of available timeslots and courts
+        - mass deletion/creation of reservations
+- Online Payment System
+    - Users can pay the cost of their court reservation online
+
 
 **April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
