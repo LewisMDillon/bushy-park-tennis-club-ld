@@ -97,15 +97,25 @@ html {
 
 
 #logo {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .nav-link {
-    color: #fff;
-    font-size: larger;
+  color: #fff;
+  font-size: larger;
+}
+
+.nav-link-footer {
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.nav-link-footer:hover {
+  color: #aaaaaa;
 }
 
 .nav-link-small {
@@ -516,6 +526,10 @@ a.article-title:hover {
 #footer-container-last {
   align-items: center;
   margin-bottom: 0!important;
+}
+
+.footer-link-heading {
+  font-size: 1.5rem;
 }
 
 #social-icons li {

@@ -98,37 +98,39 @@
     <div class="container" id="footer-container">
         <footer class="py-5 mx-auto" id="footer-container-secondary">
             <div class="row">
-                <div class="col-6 col-md-2 mb-3">
-                    <h4>Site Links</h4>
+                <div class="col-6 col-md-3 mb-3">
+                    <p class="footer-link-heading">Site Links</p>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="{% url 'website-home' %}" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="{% url 'website-about' %}" class="nav-link p-0 text-body-secondary">About</a></li>
-                        <li class="nav-item mb-2"><a href="{% url 'website-news' %}" class="nav-link p-0 text-body-secondary">News</a></li>
+                        <li class="nav-item mb-2"><a href="{% url 'website-home' %}" class="nav-link-footer p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="{% url 'website-about' %}" class="nav-link-footer p-0 text-body-secondary">About</a></li>
+                        <li class="nav-item mb-2"><a href="{% url 'website-news' %}" class="nav-link-footer p-0 text-body-secondary">News</a></li>
+                        <li class="nav-item mb-2"><a href="{% url 'website-contact' %}" class="nav-link-footer p-0 text-body-secondary">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="col-6 col-md-2 mb-3">
+                <div class="col-6 col-md-3 mb-3">
                     {% if user.is_authenticated %}
-                        <h4>My Account</h4>
+                        <p class="footer-link-heading">My Account</p>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="{% url 'profile' %}" class="nav-link p-0 text-body-secondary">My Profile</a></li>
-                            <li class="nav-item mb-2"><a href="{% url 'reservation-user-list' %}" class="nav-link p-0 text-body-secondary">My Reservations</a></li>
-                            <li class="nav-item mb-2"><a href="{% url 'logout' %}" class="nav-link p-0 text-body-secondary">Logout</a></li>
+                            <li class="nav-item mb-2"><a href="{% url 'profile' %}" class="nav-link-footer p-0 text-body-secondary">My Profile</a></li>
+                            <li class="nav-item mb-2"><a href="{% url 'reservation-user-list' %}" class="nav-link-footer p-0 text-body-secondary">My Reservations</a></li>
+                            <li class="nav-item mb-2"><a href="{% url 'reservation-date' %}" class="nav-link-footer p-0 text-body-secondary">New Reservation</a></li>
+                            <li class="nav-item mb-2"><a href="{% url 'logout' %}" class="nav-link-footer p-0 text-body-secondary">Logout</a></li>
                         </ul>
                     {% else %}
-                        <h5>Account</h5>
+                        <p>Account</p>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="{% url 'register' %}" class="nav-link p-0 text-body-secondary">Register</a></li>
-                            <li class="nav-item mb-2"><a href="{% url 'login' %}" class="nav-link p-0 text-body-secondary">Log In</a></li>
+                            <li class="nav-item mb-2"><a href="{% url 'register' %}" class="nav-link-footer p-0 text-body-secondary">Register</a></li>
+                            <li class="nav-item mb-2"><a href="{% url 'login' %}" class="nav-link-footer p-0 text-body-secondary">Log In</a></li>
                         </ul>
                     {% endif %}
                 </div>
 
                 <div class="col-md-5 offset-md-1 mb-3">
                     <ul class="list-unstyled d-flex mx-2" id="social-icons">
-                        <li class="m-3"><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li class="m-3"><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-                        <li class="m-3"><a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li class="m-3"><a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li class="m-3"><a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li class="m-3"><a href="https://instagram.com/" target="_blank" aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>
