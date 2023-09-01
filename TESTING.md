@@ -120,3 +120,17 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Opera | ![screenshot](documentation/browsers/opera.png) | No smooth-scrolling |
 | Internet Explorer | ![screenshot](documentation/browsers/iex.png) | Multiple broken elements |
 
+## Responsiveness
+
+I've tested my deployed project on multiple devices to check for responsiveness issues.
+
+| Device | Screenshot | Notes |
+| --- | --- | --- |
+| Mobile (DevTools) | ![screenshot](documentation/responsiveness/mobile.png) | Works as expected |
+| Tablet (DevTools) | ![screenshot](documentation/responsiveness/tablet.png) | Works as expected |
+| Desktop | ![screenshot](documentation/responsiveness/desktop.png) | Works as expected |
+| XL Monitor | ![screenshot](documentation/responsiveness/xl.png) | Scaling starts to have minor issues |
+| 4K Monitor | ![screenshot](documentation/responsiveness/4k.png) | Noticeable scaling issues |
+| Oneplus Nord2 | ![screenshot](documentation/responsiveness/oneplus.png) | Works as expected |
+| iPhone 14 | ![screenshot](documentation/responsiveness/iphone14.png) | Works as expected |
+
