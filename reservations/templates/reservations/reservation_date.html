@@ -1,4 +1,5 @@
 {% extends 'website/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -18,3 +19,7 @@
 </form>
 
 {% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/date.js' %}"></script>
+{% endblock scripts %}
