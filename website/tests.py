@@ -407,7 +407,7 @@ class WebsiteViewTestCase(TestCase):
 
     def test_render_404_error(self):
         """
-        Confirms the rendering of a 404 page when an invalid 
+        Confirms the rendering of a 404 page when an invalid
         post ID is entered.
         """
 

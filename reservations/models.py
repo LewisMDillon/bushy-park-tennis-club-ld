@@ -45,4 +45,3 @@ class Reservation(models.Model):
 
     def get_absolute_url(self):
         return reverse('reservation-list')
-
