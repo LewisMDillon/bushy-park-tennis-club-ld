@@ -47,3 +47,14 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | --- | --- | --- | --- |
 | style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](documentation/validation/css/css-validation-style.png) | Pass: No Errors |
 
+### JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| scripts.js | ![screenshot](documentation//validation/js/js-validation-scripts.png) | Pass: No Errors |
+| date.js | ![screenshot](documentation//validation/js/js-validation-date.png) | Pass: No Errors |
+| profile.js | ![screenshot](documentation//validation/js/js-validation-profile.png) | Pass: No Errors |
+
+
