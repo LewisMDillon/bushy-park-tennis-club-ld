@@ -1,4 +1,18 @@
 {% extends 'website/base.html' %}
+{% block head %}
+    <style>
+        #article-title-container {
+            color: #fff;
+            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+            url("{{ object.image.url }}");
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
     <article class="media content-section" id="post-detail-container-outer">
         <div class="media-body" id="post-detail-container">
@@ -20,17 +34,6 @@
                     <h1 class="article-title">{{ object.title }}</h1>
                     <small>Posted by: {{ object.author }} On {{ object.date_posted }}</small>
                 </div>
-                <style>
-                    #article-title-container {
-                        color: #fff;
-                        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
-                        url("{{ object.image.url }}");
-                        background-repeat: no-repeat;
-                        background-attachment: scroll;
-                        background-position: center center;
-                        background-size: cover;
-                    }
-                </style>
             </div>
             <div id="post-content-container">
                 <p class="article-content">{{ object.content }}</p>

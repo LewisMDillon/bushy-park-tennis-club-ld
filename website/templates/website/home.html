@@ -1,23 +1,87 @@
 {% extends 'website/base.html' %}
 {% load static %}
+{% block head %}
+{% if "default" in latest_post.image.url %}
+<style>
+    #news-primary {
+        color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+        url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-1_tyiujz.jpg");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
+</style>
+{% else %}
+<style>
+    #news-primary {
+        color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+        url("{{ latest_post.image.url }}");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
+</style>
+{% endif %}
 
+{% if "default" in second_last_post.image.url %}
+<style>
+    #news-secondary-left {
+        color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+        url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-2_qo9b5o.jpg");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
+</style>
+{% else %}
+<style>
+    #news-secondary-left {
+        color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+        url("{{ second_last_post.image.url }}");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
+</style>
+{% endif %}
+
+{% if "default" in third_last_post.image.url %}
+<style>
+    #news-secondary-right {
+        color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+        url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-3_vmjhxw.jpg");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
+</style>
+{% else %}
+<style>
+    #news-secondary-right {
+        color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
+        url("{{ third_last_post.image.url }}");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
+</style>
+{% endif %}
+{% endblock head %}
 {% block content %}
 <!-- HERO SECTION -->
 <div class="px-4 py-5 my-2 text-center" id="hero">
-    <style>
-        #hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('https://res.cloudinary.com/lewismd/image/upload/v1692894959/rkz5bmrxdc4zzvk03gjz.webp');
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-position: center center;
-            background-size: cover;
-            min-height: 95vh;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    </style>
     <h2 class="my-4" id="sub-heading">Welcome to our website!</h2>
     <h1 class="display-5 fw-bold mb-5 text-body-emphasis align-middle" id="main-heading">Bushy Park Tennis Club</h1>
     <div class="col-lg-6 mx-auto">
@@ -58,30 +122,6 @@
     <!-- MAIN NEWS JUMBOTRON -->
     <div class="p-5 mb-2 bg-body-tertiary border rounded-3" id="news-primary">
         <div class="container-fluid py-5">
-            {% if "default" in latest_post.image.url %}
-            <style>
-                #news-primary {
-                    color: #fff;
-                    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-1_tyiujz.jpg");
-                    background-repeat: no-repeat;
-                    background-attachment: scroll;
-                    background-position: center center;
-                    background-size: cover;
-                }
-            </style>
-            {% else %}
-            <style>
-                #news-primary {
-                    color: #fff;
-                    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),
-                    url("{{ latest_post.image.url }}");
-                    background-repeat: no-repeat;
-                    background-attachment: scroll;
-                    background-position: center center;
-                    background-size: cover;
-                }
-            </style>
-            {% endif %}
             <h1 class="display-5 fw-bold">{{ latest_post.title }}</h1>
             <p class="col-md-8 fs-4">
                 {{ latest_post.subtitle }}
@@ -97,29 +137,6 @@
         <!-- LEFT JUMBOTRON -->
         <div class="col-md-6 jumbotron-container-secondary-left">
             <div class="h-100 p-5 text-bg-dark border rounded-3" id="news-secondary-left">
-                {% if "default" in second_last_post.image.url %}
-                    <style>
-                        #news-secondary-left {
-                            color: #fff;
-                            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-2_qo9b5o.jpg");
-                            background-repeat: no-repeat;
-                            background-attachment: scroll;
-                            background-position: center center;
-                            background-size: cover;
-                        }
-                    </style>
-                {% else %}
-                    <style>
-                        #news-secondary-left {
-                            color: #fff;
-                            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("{{ second_last_post.image.url }}");
-                            background-repeat: no-repeat;
-                            background-attachment: scroll;
-                            background-position: center center;
-                            background-size: cover;
-                        }
-                    </style>
-                {% endif %}
                 <h2>{{ second_last_post.title }}</h2>
                 <p>
                     {{ second_last_post.subtitle }}
@@ -132,29 +149,6 @@
         <!-- RIGHT JUMBOTRON -->
         <div class="col-md-6 jumbotron-container-secondary-right">
             <div class="h-100 p-5 bg-body-tertiary border rounded-3" id="news-secondary-right">
-                {% if "default" in third_last_post.image.url %}
-                    <style>
-                        #news-secondary-right {
-                            color: #fff;
-                            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-3_vmjhxw.jpg");
-                            background-repeat: no-repeat;
-                            background-attachment: scroll;
-                            background-position: center center;
-                            background-size: cover;
-                        }
-                    </style>
-                {% else %}
-                    <style>
-                        #news-secondary-right {
-                            color: #fff;
-                            background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("{{ third_last_post.image.url }}");
-                            background-repeat: no-repeat;
-                            background-attachment: scroll;
-                            background-position: center center;
-                            background-size: cover;
-                        }
-                    </style>
-                {% endif %}
                 <h2>{{ third_last_post.title }}</h2>
                 <p>
                     {{ third_last_post.subtitle }}

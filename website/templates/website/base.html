@@ -19,6 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
     <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
+    {% block head %}{% endblock head %}
 
     <title>Bushy Park Tennis Club</title>
 </head>
@@ -46,7 +47,7 @@
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="{% url 'website-contact' %}">Contact</a>
                     </li>
-                    <div class="navbar-nav">
+                    <li class="navbar-nav">
                         {% if user.is_staff %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
@@ -70,14 +71,14 @@
                             <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
                             <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                         {% endif %}
-                    </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     
 
-    <main role="main" class="container">
+    <main class="container">
         <div class="row" id="message-container-outer">
             <div class="col-md-8">
                 {% if messages %}
