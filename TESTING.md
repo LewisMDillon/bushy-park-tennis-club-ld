@@ -105,3 +105,18 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | views.py | [PEP8 CI]() | ![screenshot](documentation/validation/python/reservations/py-validation-reservations-views.png) | Pass: No Errors |
 
 
+## Browser Compatibility
+
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Screenshot | Notes |
+| --- | --- | --- |
+| Chrome | ![screenshot](documentation/browsers/chrome.png) | Works as expected |
+| Firefox | ![screenshot](documentation/browsers/firefox.png) | Works as expected |
+| Edge | ![screenshot](documentation/browsers/edge.png) | No smooth-scrolling |
+| Safari | ![screenshot](documentation/browsers/safari.png) | Works as expected |
+| Brave | ![screenshot](documentation/browsers/brave.png) | No smooth-scrolling |
+| Opera | ![screenshot](documentation/browsers/opera.png) | No smooth-scrolling |
+| Internet Explorer | ![screenshot](documentation/browsers/iex.png) | Multiple broken elements |
+
