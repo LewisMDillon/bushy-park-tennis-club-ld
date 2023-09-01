@@ -491,5 +491,9 @@ The local version, created on Gitpod, does not have the functionality to send co
 | [Unsplash](https://unsplash.com/photos/vRb10tlBHVQ) | about page | image | 'fairly priced' image on about page
 
 The first image for 'Beautiful Facilities' on the about page is my own.
+### Acknowledgements
 
-Happy coding!
+- I would like to thank my Code Institute mentor, Rory Patrick Sheridan for their support throughout the development of this project.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
+- I would like to thank my partner Rachel, for believing in me, and allowing me to make this transition into software development, and also actually playing tennis with me while I was making this site to keep me sane.
