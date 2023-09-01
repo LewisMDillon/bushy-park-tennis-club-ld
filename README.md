@@ -281,6 +281,43 @@ While planning this project, I drew up an Entity Relationship Diagram to help me
 ![screenshot](documentation/erd.png)
 
 
+## Agile Development Process
+
+### GitHub Projects
+
+[GitHub Projects](https://github.com/LewisMDillon/bushy-park-tennis-club-ld/projects) served as an Agile tool for this project.
+It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
+
+Through it, user stories, issues, and tasks were planned, then tracked on a weekly basis using the basic Kanban board.
+
+The [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) method was used with accompanying custom Github project labels to help me to prioritise the important tasks in the time I had available.
+
+![screenshot](documentation/gh-projects.png)
+
+### GitHub Issues
+
+[GitHub Issues](https://github.com/LewisMDillon/bushy-park-tennis-club-ld/issues) served as an another Agile tool.
+There, I used my own **User Story Template** to manage user stories.
+
+
+- [Open Issues](https://github.com/LewisMDillon/bushy-park-tennis-club-ld/issues)
+
+    ![screenshot](documentation/gh-issues-open.png)
+
+- [Closed Issues](https://github.com/LewisMDillon/bushy-park-tennis-club-ld/issues?q=is%3Aissue+is%3Aclosed)
+
+    ![screenshot](documentation/gh-issues-closed.png)
+
+### MoSCoW Prioritization
+
+I've decomposed my Epics into stories prior to prioritizing and implementing them.
+Using this approach, I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
+
+- **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+- **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
+- **Could Have**: has small impact if left out (*20% of stories*)
+- **Won't Have**: not a priority for this iteration
+
 
 **April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
