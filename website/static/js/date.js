@@ -1,3 +1,4 @@
+/* jshint esversion: 11 */
 // DATE PICKER 
 
 // Gets date info for formatting
