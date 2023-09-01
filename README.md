@@ -98,6 +98,15 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 
 ![screenshot](documentation/features/sitepages/reservation-page.png)
 
+- **Custom Error Pages**
+
+    - Custom error handler pages. These pages display when a user encounters one of the following common errors: 400, 403, 404, 500. These provide a more user-friendly error page than the user would see otherwise and includes an informative message and button to return home to the site. 
+
+![screenshot](documentation/features/sitepages/400.png)
+![screenshot](documentation/features/sitepages/403.png)
+![screenshot](documentation/features/sitepages/404.png)
+![screenshot](documentation/features/sitepages/500.png)
+
 ### User Features
 
 - **User Registration**
