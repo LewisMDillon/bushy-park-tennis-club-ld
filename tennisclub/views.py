@@ -74,7 +74,9 @@ def page_not_found(request, exception, template_name=ERROR_404_TEMPLATE_NAME):
             ERROR_PAGE_TEMPLATE
             % {
                 "title": "Not Found",
-                "details": "The requested resource was not found on this server.",
+                "details": (
+                    "The requested resource was not found on this server."
+                    ),
             },
         )
         body = template.render(Context(context))
@@ -96,7 +98,9 @@ def server_error(request, template_name=ERROR_500_TEMPLATE_NAME):
             # Reraise if it's a missing custom template.
             raise
         return HttpResponseServerError(
-            ERROR_PAGE_TEMPLATE % {"title": "Server Error (500)", "details": ""},
+            ERROR_PAGE_TEMPLATE % {
+                "title": "Server Error (500)", "details": ""
+                },
         )
     return HttpResponseServerError(template.render())
 
@@ -116,7 +120,9 @@ def bad_request(request, exception, template_name=ERROR_400_TEMPLATE_NAME):
             # Reraise if it's a missing custom template.
             raise
         return HttpResponseBadRequest(
-            ERROR_PAGE_TEMPLATE % {"title": "Bad Request (400)", "details": ""},
+            ERROR_PAGE_TEMPLATE % {
+                "title": "Bad Request (400)", "details": ""
+                },
         )
     # No exception content is passed to the template, to not disclose any
     # sensitive information.
@@ -124,7 +130,9 @@ def bad_request(request, exception, template_name=ERROR_400_TEMPLATE_NAME):
 
 
 # @requires_csrf_token
-def permission_denied(request, exception, template_name=ERROR_403_TEMPLATE_NAME):
+def permission_denied(
+    request, exception, template_name=ERROR_403_TEMPLATE_NAME
+):
     """
     Permission denied (403) handler.
 
@@ -154,4 +162,3 @@ def permission_denied(request, exception, template_name=ERROR_403_TEMPLATE_NAME)
 def my_test_500_view(request):
     # Return an "Internal Server Error" 500 response code.
     return HttpResponse(status=500)
-
