@@ -274,6 +274,13 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 - [Gunicorn](https://gunicorn.org/) used for WSGI server
 - [sycopg2](https://pypi.org/project/psycopg2/) used as a PostgreSQL database adapter
 
+## Database Design
+
+While planning this project, I drew up an Entity Relationship Diagram to help me to visualise the database models and their relationships. 
+
+![screenshot](documentation/erd.png)
+
+
 
 **April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
