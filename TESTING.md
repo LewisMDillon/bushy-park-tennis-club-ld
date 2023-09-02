@@ -134,3 +134,40 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Oneplus Nord2 | ![screenshot](documentation/responsiveness/oneplus.png) | Works as expected |
 | iPhone 14 | ![screenshot](documentation/responsiveness/iphone14.png) | Works as expected |
 
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+### Website App Templates - Mobile Testing
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-home.png) | Some minor performance warnings |
+| About | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-about.png) | Some minor performance warnings |
+| News | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-news.png) | Warning about link text (ignored as link is a Bootstrap button) |
+| Contact | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-contact.png) | Some minor performance warnings |
+| Base | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-base.png) | Some minor performance warnings |
+| Post-Detail | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-post-detail.png) | Some minor performance warnings |
+| Post-Form | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-post-form.png) | Some minor performance warnings |
+| Post-Confirm-Delete | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-post-confirm-delete.png) | Some minor performance warnings |
+| Custom Error 400 | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-400.png) | Some minor performance warnings |
+| Custom Error 403 | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-403.png) | Some minor performance warnings |
+| Custom Error 404 | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-404.png) | Some minor performance warnings |
+| Custom Error 500 | Mobile | ![screenshot](documentation/lighthouse/website/mobile/website-mobile-500.png) | Some minor performance warnings |
+
+
+### Website App Templates - Desktop Testing
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-home.png) | Some minor performance warnings |
+| About | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-about.png) | Some minor performance warnings |
+| News | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-news.png) | Warning about link text (ignored as link is a Bootstrap button) |
+| Contact | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-contact.png) | No warnings |
+| Base | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-base.png) | No warnings |
+| Post-Detail | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-post-detail.png) | No warnings |
+| Post-Form | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-post-form.png) | No warnings |
+| Post-Confirm-Delete | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-post-confirm-delete.png) | No warnings |
+| Custom Error 400 | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-400.png) | No warnings |
+| Custom Error 403 | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-403.png) | No warnings |
+| Custom Error 404 | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-404.png) | No warnings |
+| Custom Error 500 | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-500.png) | No warnings |
+
