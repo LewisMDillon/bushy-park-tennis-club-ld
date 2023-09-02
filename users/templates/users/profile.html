@@ -4,12 +4,14 @@
 {% block content %}
     <div id="profile-container">
       <div class="media">
-        {% if "default" in user.profile.image.url %}
-            <img class="rounded-circle account-img" src="https://res.cloudinary.com/lewismd/image/upload/v1690812491/default_i27az4.jpg" alt="profile picture">
-        {% else %}
-            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="profile picture">
-        {% endif %}    
-        <div class="media-body">
+        <div id="profile-image-container">
+          {% if "default" in user.profile.image.url %}
+              <img class="rounded-circle account-img" src="https://res.cloudinary.com/lewismd/image/upload/v1690812491/default_i27az4.jpg" alt="profile picture">
+          {% else %}
+              <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="profile picture">
+          {% endif %}
+        </div>   
+        <div class="media-body" id="profile-details-container">
           <h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2>
           <h3>Profile Info</h3>
           <p>Username: {{ user.username }}</p>
@@ -26,7 +28,7 @@
               {{ u_form|crispy }}
               {{ p_form|crispy }}
           </fieldset>
-          <div class="form-group">
+          <div class="form-group" id="update-form-button-container">
               <button class="btn green-button my-3" type="submit">Update</button>
               <p class="btn btn-secondary my-3" id="update-cancel-button">Cancel</p>
           </div>

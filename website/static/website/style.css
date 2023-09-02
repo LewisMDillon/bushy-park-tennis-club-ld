@@ -370,6 +370,17 @@ a.article-title:hover {
   padding: 10px 20px;
   margin-bottom: 20px;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-details-container {
+  text-align: center;
+}
+
+#profile-image-container {
+  text-align: center;
 }
 
 .account-img {
@@ -387,6 +398,14 @@ a.article-title:hover {
 #update-form {
   display: none;
   max-width: 360px;
+}
+
+#update-form input {
+  width: 300px;
+}
+
+#update-form-button-container {
+  text-align: center;
 }
 
 /* -------- CONTACT PAGE -------- */
