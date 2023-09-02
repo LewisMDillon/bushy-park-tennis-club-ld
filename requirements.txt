@@ -1,5 +1,6 @@
 asgiref==3.7.2
 cloudinary==1.33.0
+coverage==7.3.0
 crispy-bootstrap4==2022.1
 dj-database-url==0.5.0
 dj3-cloudinary-storage==0.0.6
