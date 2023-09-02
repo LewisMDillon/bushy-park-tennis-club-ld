@@ -171,3 +171,28 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Custom Error 404 | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-404.png) | No warnings |
 | Custom Error 500 | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-500.png) | No warnings |
 
+### Users App Templates - Mobile Testing
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Login | Mobile | ![screenshot](documentation/lighthouse/users/mobile/users-mobile-login.png) | Some minor performance warnings |
+| Logout | Mobile | ![screenshot](documentation/lighthouse/users/mobile/users-mobile-logout.png) | Some minor performance warnings |
+| Register | Mobile | ![screenshot](documentation/lighthouse/users/mobile/users-mobile-register.png) | Some minor performance warnings |
+| Profile | Mobile | ![screenshot](documentation/lighthouse/users/mobile/users-mobile-profile.png) | Some minor performance warnings |
+| Password reset | Mobile | ![screenshot](documentation/lighthouse/users/mobile/users-mobile-password-reset.png) | Some minor performance warnings |
+| Password reset-done | Mobile | ![screenshot](documentation/lighthouse/users/mobile/users-mobile-password-reset-done.png) | Some minor performance warnings |
+| Password reset-confirm | Mobile | ![screenshot](documentation/lighthouse/users/mobile/users-mobile-password-reset-confirm.png) | Some minor performance warnings |
+| Password reset-complete | Mobile | ![screenshot](documentation/lighthouse/users/mobile/users-mobile-password-reset-complete.png) | Some minor performance warnings |
+
+### Users App Templates - Desktop Testing
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Login | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-login.png) | No warnings |
+| Logout | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-logout.png) | No warnings |
+| Register | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-register.png) | Minor performance warnings |
+| Profile | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-profile.png) | No warnings |
+| Password reset | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-password-reset.png) | No warnings |
+| Password reset-done | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-password-reset-done.png) | No warnings |
+| Password reset-confirm | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-password-reset-confirm.png) | No warnings |
+| Password reset-complete | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-password-reset-complete.png) | No warnings |
+| x | x | x | repeat for any other tested pages/sizes |
+
