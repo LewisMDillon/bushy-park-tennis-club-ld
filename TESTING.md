@@ -201,7 +201,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Reservation List | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-list.png) | Some minor performance warnings |
 | Reservation User List | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-user-list.png) | Warning about link text (ignored as link is a Bootstrap button) |
 | Reservation Detail | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-detail.png) | Some minor performance warnings |
-| Rservation Confirm Delete | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-confirm-delete.png) | Some minor performance warnings |
+| Reservation Confirm Delete | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-confirm-delete.png) | Some minor performance warnings |
 | Reservation Date | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-date.png) | Some minor performance warnings |
 | Reservation Form | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-form.png) | Some minor performance warnings |
 
@@ -286,8 +286,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | User Story | Screenshot |
 | --- | --- |
 | As a user I can view the site so that I can learn about the tennis club | ![screenshot](documentation/features/sitepages/home.png) |
-| As a user I can access different areas of the site depending on whether I am logged in or not. so that I do not engage with site functionalities that require an account, if I do not have one. | ![screenshot](documentation/features/user/login-navbar-links.png) |
-| As a user I can create a personalized user profile so that I can see my user details and other personalized information. | ![screenshot](documentation/features/sitepages/profile.png) |
+| As a user I can access different areas of the site, depending on whether I am logged in or not, so that I do not engage with site functionalities that require an account, if I do not have one. | ![screenshot](documentation/features/user/login-navbar-links.png) |
+| As a user I can create a personalised user profile so that I can see my user details and other personalised information. | ![screenshot](documentation/features/sitepages/profile.png) |
 | As a user I can see different site navigation links when I am logged in so that I can easily access areas of the site that require login, and do not see confusing 'login' links when already logged in. | ![screenshot](documentation/features/user/login-navbar-links.png) |
 | As a user I can navigate around different pages in the site so that I can see the relevant information in an organised manner | ![screenshot](documentation/features/sitepages/home.png) |
 | As a user I can create a secure account so that I can have a personal presence on the site, as well as access any account-based functionalities | ![screenshot](documentation/features/sitepages/register.png) |
@@ -297,14 +297,14 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a user I can see a paginated list of site posts so that I see only the most up-to-date posts and can navigate to older posts if I wish | ![screenshot](documentation/features/sitepages/pagination.png)|
 | As a user I can delete my existing booking so that I can easily cancel a reserved time slot, should I need to | ![screenshot](documentation/features/user/cancel-reservation.png) |
 | As a user I can reset my account password so that I can retain access to my account, even if I forget my password. | ![screenshot](documentation/features/user/password-recover.png) |
-| As an account holder I can update my profile information so that my profile is personalized and contains accurate information | ![screenshot](documentation/features/user/profile-update.png) |
+| As an account holder I can update my profile information so that my profile is personalised and contains accurate information | ![screenshot](documentation/features/user/profile-update.png) |
 | As an account holder I can upload a profile picture so that my profile is personalised to me and is recognisable at a glance | ![screenshot](documentation/features/user/profile-update.png) |
 | As an account holder I can update or remove my profile picture so that my profile stays current to my preferences | ![screenshot](documentation/features/user/profile-update.png) |
 | As an account holder I can logout so that access to my account is stopped and my information is kept secure | ![screenshot](documentation/features/sitepages/logout.png) |
-| As an account holder I can login to the site so that I can access account-based functionalities and info | ![screenshot](documentation/features/sitepages/login.png) |
-| As an administrator I can update select site content via a back end interface so that I can add and remove content from the site, without engaging with the site's code | ![screenshot](documentation/features/admin/django-back-end.png) |
+| As an account holder I can login to the site so that I can access account-based functionalities and information | ![screenshot](documentation/features/sitepages/login.png) |
+| As an administrator I can update select site content via a back-end interface so that I can add and remove content from the site, without engaging with the site's code | ![screenshot](documentation/features/admin/django-back-end.png) |
 | As an administrator I can update site content via a front-end interface so that I can edit certain sections of the site in a user-friendly and repeatable way | ![screenshot](documentation/features/admin/update-post.png) |
-| As an administrator I can update users' privileges so that I can allow/restrict users' and staff engagement with the back end of the site | ![screenshot](documentation/features/admin/user-status.png) |
+| As an administrator I can update users' privileges so that I can allow/restrict user and staff engagement with the back end of the site | ![screenshot](documentation/features/admin/user-status.png) |
 | As an administrator I can send emails to users automatically so that the user can receive confirmation and other emails, without having to manually send these out. | ![screenshot](documentation/features/user/email-confirmation1.png) | ![screenshot](documentation/features/user/email-confirmation2.png) |
 | As an administrator I can create my own, or view/edit/delete users' court bookings so that I have complete control over the booking system, and can help users to manage their bookings | ![screenshot](documentation/features/admin/reservation-delete.png) |
 | As an administrator I can encrypt users' passwords so that the passwords remain secure and unexploitable by anyone with access to the back end of the site | ![screenshot](documentation/features/admin/password-storage.png) |
