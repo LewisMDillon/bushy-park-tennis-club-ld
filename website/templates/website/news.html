@@ -5,7 +5,7 @@
     <div id="article-container">
         {% for post in posts %}
             {% if "default" in post.image.url %}
-                <article class="media col-md-8 my-4 news-box" style="background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('https://res.cloudinary.com/lewismd/image/upload/v1691414484/article-image-1_tyiujz.jpg');">
+                <article class="media col-md-8 my-4 news-box" style="background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('https://res.cloudinary.com/lewismd/image/upload/v1693655086/blue-racquets_h2bs0l.webp');">
                     <div class="media-body">
                         <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
                         <p class="article-content">{{ post.subtitle }}</p>
