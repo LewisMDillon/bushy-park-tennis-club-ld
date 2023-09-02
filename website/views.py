@@ -7,6 +7,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
     )
+
+from django.urls import reverse_lazy
 from .models import Post
 
 
@@ -66,7 +68,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
-    success_url = '/'
+    success_url = reverse_lazy('website-news')
 
     def test_func(self):
         post = self.get_object()
