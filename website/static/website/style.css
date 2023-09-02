@@ -685,6 +685,7 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
 #reservation-search-container-outer {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #reservation-search-container-date {
@@ -722,6 +723,11 @@ input.picker[type="date"]::-webkit-calendar-picker-indicator {
 
 #reservation-table {
  max-width: 1200px;
+}
+
+.search-box-header {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 /* -------- RESERVATION DETAILS -------- */

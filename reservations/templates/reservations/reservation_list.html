@@ -7,19 +7,19 @@
     <div class="my-5" id="reservation-search-container-outer">
 
         <div class="mx-3" id="reservation-search-container-date">
-            <h4>Search for reservations by date:</h4>
+            <p class="search-box-header">Search for reservations by date:</p>
             <p>Choose a date below and click search</p>
             <form method="GET">
-                <input type="date" name="date-search" value="{{ date_search_input }}" id="reservation-date-search">
+                <input type="date" name="date-search" value="{{ date_search_input }}" id="reservation-date-search" aria-label="search by date">
                 <input type="submit" value="Search">
             </form>
         </div>
 
         <div class="mx-3" id="reservation-search-container-name">
-            <h4>Search for reservations by name:</h4>
+            <p class="search-box-header">Search for reservations by name:</p>
             <p>Enter the user's second name and click search</p>
             <form method="GET">
-                <input type="text" name="name-search" value="{{ name_search_input }}" id="reservation-name-search">
+                <input type="text" name="name-search" value="{{ name_search_input }}" id="reservation-name-search" aria-label="search by name">
                 <input type="submit" value="Search">
             </form>
         </div>
