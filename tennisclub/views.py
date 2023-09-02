@@ -158,7 +158,3 @@ def permission_denied(
         template.render(request=request, context={"exception": str(exception)})
     )
 
-
-def my_test_500_view(request):
-    # Return an "Internal Server Error" 500 response code.
-    return HttpResponse(status=500)

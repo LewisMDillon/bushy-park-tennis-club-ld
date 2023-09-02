@@ -93,6 +93,8 @@ WSGI_APPLICATION = 'tennisclub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+# Default Django database - kept for testing purposes
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

@@ -70,5 +70,4 @@ urlpatterns = [
 
     path('', include('website.urls')),
     path('reserve/', include('reservations.urls')),
-    path('test-500', views.my_test_500_view, name='test-500'),
 ]
