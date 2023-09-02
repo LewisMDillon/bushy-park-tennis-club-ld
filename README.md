@@ -54,6 +54,7 @@ All user stories can be found in a linked GitHub project [here](https://github.c
     - News Page. Displays news posts made by site staff. User can see the most up-to-date information about events and other things happening at the club. Posts are paginated and displayed in a pleasing layout, utilising images to draw the user in.
 
 ![screenshot](documentation/features/sitepages/news.png)
+![screenshot](documentation/features/sitepages/pagination.png)
 
 - **Contact Page**
 
@@ -132,6 +133,12 @@ All user stories can be found in a linked GitHub project [here](https://github.c
     - Users who have forgotten their password can recover their password via the forgot password link on the login page. Users will enter their email and get a password reset link sent to their account email which they can use to set a new password.
 
 ![screenshot](documentation/features/user/password-recover.png)
+
+- **Login Dependant Navbar Links**
+
+    - Users who are logged in see new links in the navbar. 'Register' and 'Login' links are replaced with 'My Account' and 'Reserve A Court' links. This provides the user with visual feedback upon logging in, as well as removing links that they will not need.
+
+![screenshot](documentation/features/user/login-navbar-links.png)
 
 - **Login Redirect**
 
