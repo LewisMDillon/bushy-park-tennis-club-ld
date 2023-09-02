@@ -4,12 +4,12 @@
 {% block content %}
 <p id="form-url" hidden>{{ request.get_full_path }}</p>
 <h1 class="text-center" id="time-form-heading">Court Reservation</h1>
-<h3 class="text-center">Use the form below to reserve a court</h3>
+<h2 class="text-center">Use the form below to reserve a court</h2>
 <div class="row justify-content-center mx-auto mt-5">
     <div class="col-4" id="time-form-container">
         <form method="POST">
             {% csrf_token %}
-            <h4>Please select a time</h4>
+            <h3>Please select a time</h3>
             <div id="time-field-container">
                 <fieldset class="form-group">
                     {{ form|crispy }}
