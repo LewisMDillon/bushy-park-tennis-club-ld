@@ -5,7 +5,7 @@
     <div id="profile-container">
       <div class="media">
         {% if "default" in user.profile.image.url %}
-            <img class="rounded-circle account-img" src="https://res.cloudinary.com/lewismd/image/upload/v1690812491/default_i27az4.jpg">
+            <img class="rounded-circle account-img" src="https://res.cloudinary.com/lewismd/image/upload/v1690812491/default_i27az4.jpg" alt="profile picture">
         {% else %}
             <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="profile picture">
         {% endif %}    
