@@ -348,4 +348,74 @@ Below are the results from the various apps on my application that I've tested:
 | Website | tests.py | 97% | ![screenshot](documentation/py-test/website.png) |
 
 
+## Bugs
 
+
+- Hero image on homepge is not appearing.
+
+    ![screenshot](documentation/bugs/homepage-image.png)
+
+    - To fix this, I fixed a syntax error in the jinja template in home.html
+
+- Footer social icons are not appearing
+
+    ![screenshot](documentation/bugs/social-icons.png)
+
+    - To fix this, I fixed an error in the fontawesome script in base.html
+
+- About Page layout is broken
+
+    ![screenshot](documentation/bugs/about-page.png)
+
+    - To fix this, I removed the 'page-container' CSS class from the page container which had the `display: flex` property.
+
+- News posts are not using the default image correctly
+
+    ![screenshot](documentation/bugs/news-default-images.png)
+
+    - To fix this, I fixed an error in the logic of the News for loop in the django templating language on news.html
+
+- Dropdown Nav Links have broken styling
+
+    ![screenshot](documentation/bugs/nav-dropdown.png)
+
+    - To fix this, I fixed the incorrect class name of the nav link dropdowns, which was causing Bootstrap to identify them incorrectly
+
+- Update profile button is unclickable
+
+    ![screenshot](documentation/bugs/profile-update-button.png)
+
+    - To fix this, I fixed a syntax error in the profile.js Javascript file, wherein an Event Listener was not targeting the button correctly
+
+- User reservation list is not populating correctly
+
+    ![screenshot](documentation/bugs/user-reservation-list.png)
+
+    - To fix this, I fixed an error in the Django templating language for loop in reservation_user_list.html, wherein the `if` statement needed to reference `User.username`, not simply `User`
+
+- Long string of letters is appearing on reservation form
+
+    ![screenshot](documentation/bugs/csrf.png)
+
+    - To fix this, I fixed the function in the date.js Javascript file which was hiding certain elements of the form. This function was unintentionally deleting the hidden input type on the csrf input field, causing it to be rendered on the form page. 
+
+- Reservation timeslots not being stylized/disabled as they should when reaching a certain number of bookings
+
+    ![screenshot](documentation/bugs/timeslots.png)
+
+    - To fix this, I added a loop to run the `AvailabilityCheck()` function in JS, which was previously only running once and not for all available timeslots
+
+- Admin cannot delete other user's reservations
+
+    ![screenshot](documentation/bugs/admin-delete-reservations.png)
+
+    - To fix this, I added an `if/else` statement to the reservation view which checked if a user was the reservation's creator, or if the user was a staff member
+
+
+**Open Issues**
+
+Any open issues can be tracked [here](https://github.com/LewisMDillon/bushy-park-tennis-club-ld/issues). These are the "Won't Have's" for this project that, for a variety of reasons, will not be included in this projct submission. These may be revisited and added in the future.
+
+## Unfixed Bugs
+
+There are no remaining bugs that I am aware of.
