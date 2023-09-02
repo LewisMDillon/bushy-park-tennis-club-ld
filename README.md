@@ -39,7 +39,7 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 
 - **Homepage**
 
-    - The main homepage for the site, hero image is large and striking. Large heading tells users they are in the right place. Call to action button to invite users to enter and explore the site.
+    - The main homepage for the site. Hero image is large and striking. Large heading tells users they are in the right place. Call to action button to invite users to enter and explore the site.
 
 ![screenshot](documentation/features/sitepages/home.png)
 
@@ -51,7 +51,7 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 
 - **News Page**
 
-    - News Page. Displays news posts made by site staff. User can see the most up-to-date information about events and other things happening at the club. Posts are paginated and displayed in a pleasing layout, utilising images to draw the user in.
+    - News Page. Displays news posts made by site staff. Users can see the most up-to-date information about events and other things happening at the club. Posts are paginated and displayed in a pleasing layout, utilising images to draw the user in.
 
 ![screenshot](documentation/features/sitepages/news.png)
 ![screenshot](documentation/features/sitepages/pagination.png)
@@ -71,7 +71,7 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 
 - **Login Page**
 
-    - Login Page. Displays a login form that existing users can use to log in to the site. Two simple input fields for username and password make it easy for users to log in tto their account. A Forgot Password link takes users to another page where they can recover their password. A sign up button at the bottom of the page lets users who do not yet have an account easily find the register page
+    - Login Page. Displays a login form that existing users can use to log in to the site. Two simple input fields for username and password make it easy for users to log in to their account. A Forgot Password link takes users to another page where they can recover their password. A sign up button at the bottom of the page lets users who do not yet have an account easily find the register page
 
 ![screenshot](documentation/features/sitepages/login.png)
 
@@ -160,10 +160,10 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 
 - **User Court Reservations**
 
-    - Users can use a front-end form to reserve a court to play tennis on at the tennis club. Users are presented with a very simple form, which is easy to fill out, and allows them to quickly 
+    - Users can use a front-end form to reserve a court to play tennis at the tennis club. Users are presented with a very simple form, which is easy to fill out, and allows them to quickly 
       make reservations.
 
-      The reservation form contains two steps. First, the user is prompted to select the date on which they would like to play, dates in the past are automatically disabled. Next the user is prompted to choose the timeslot on which they would like to play. Timeslots are automatically presented according to the club's opening hours.
+      The reservation form contains two steps. First, the user is prompted to select the date on which they would like to play, dates in the past are automatically disabled. Next,the user is prompted to choose the timeslot at which they would like to play. Timeslots are automatically presented according to the club's opening hours.
 
 ![screenshot](documentation/features/user/court-reservation.png)
 
@@ -229,18 +229,6 @@ All user stories can be found in a linked GitHub project [here](https://github.c
     - Administrators, using the master reservation list, can view the details of another user's reservation, as well as delete that reservation on behalf of that user.
 
 ![screenshot](documentation/features/admin/reservation-delete.png)
-
-- **Title for feature #**
-
-    - Details
-
-![screenshot](documentation/feature/admin/.png)
-
-- **Title for feature #**
-
-    - Details
-
-![screenshot](documentation/feature/admin/.png)
 
 
 ### Future Features
