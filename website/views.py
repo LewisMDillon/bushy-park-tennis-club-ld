@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
@@ -40,6 +41,7 @@ class PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.success(self.request, "The post was created successfully")
         return super().form_valid(form)
 
     def test_func(self):
@@ -55,6 +57,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = ['title', 'subtitle', 'content', 'image']
 
     def form_valid(self, form):
+        messages.success(self.request, "The post was updated successfully")
         return super().form_valid(form)
 
     def test_func(self):
@@ -69,6 +72,9 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('website-news')
+    success_message = (
+        'The post was deleted successfully'
+    )
 
     def test_func(self):
         post = self.get_object()
@@ -77,6 +83,10 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         elif self.request.user.is_superuser:
             return True
         return False
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(PostDeleteView, self).delete(request, *args, **kwargs)
 
 
 def about(request):
