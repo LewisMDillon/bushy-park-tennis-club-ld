@@ -1,6 +1,8 @@
 {% extends 'website/base.html' %}
 {% block head %}
 {% if "default" in post.image.url %}
+<!-- INLINE STYLING -->
+<!-- Inline styling used here to allow python logic to dictate what styling is used on this page -->
     <style>
         #article-title-container {
             color: #fff;
@@ -27,15 +29,18 @@
 {% endif %}
 {% endblock %}
 
+<!-- POST DETAILS -->
 {% block content %}
     <article class="media content-section" id="post-detail-container-outer">
         <div class="media-body" id="post-detail-container">
             <div class="article-metadata">
+                <!-- checks if post was made by this user -->
                 {% if object.author == user %}
                     <div>
                         <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
                         <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
                     </div>
+                <!-- checks if user has staff privileges (includes superuser) -->
                 {% elif user.is_staff %}:
                     <div>
                         <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>

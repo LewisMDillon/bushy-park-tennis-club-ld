@@ -2,23 +2,28 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
+<!-- PROFILE PAGE -->
     <div id="profile-container">
       <div class="media">
         <div id="profile-image-container">
           {% if "default" in user.profile.image.url %}
+          <!-- PROFILE IMAGE (default img is displayed if user does not upload their own) -->
               <img class="rounded-circle account-img" src="https://res.cloudinary.com/lewismd/image/upload/v1690812491/default_i27az4.jpg" alt="profile picture">
           {% else %}
               <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="profile picture">
           {% endif %}
-        </div>   
+        </div> 
+        <!-- PROFILE DETAILS -->  
         <div class="media-body" id="profile-details-container">
           <h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2>
           <h3>Profile Info</h3>
           <p>Username: {{ user.username }}</p>
           <p>Email: {{ user.email }}</p>
         </div>
+        <!-- LINK TO USER-RESERVATION PAGE -->
         <div><a href="{% url 'reservation-user-list' %}">Click here to see your upcoming court reservations</a></div>
       </div>
+      <!-- EDIT PROFILE BUTTON (reveals edit profile form) -->
       <button class="btn green-button my-3" id="update-button">Edit Profile</button>
       <div id="profile-form-container">
         <form method="POST" enctype="multipart/form-data" id="update-form">
@@ -29,7 +34,9 @@
               {{ p_form|crispy }}
           </fieldset>
           <div class="form-group" id="update-form-button-container">
+              <!-- SUBMITS PROFILE CHANGES -->
               <button class="btn green-button my-3" type="submit">Update</button>
+              <!-- CANCELS PROFILE CHANGES (and hides the form) -->
               <p class="btn btn-secondary my-3" id="update-cancel-button">Cancel</p>
           </div>
         </form>
@@ -38,5 +45,6 @@
 {% endblock content %}
 
 {% block scripts %}
+<!-- JS FOR SHOWING/HIDING THE PROFILE FORM -->
 <script src="{% static 'js/profile.js' %}"></script>
 {% endblock scripts %}

@@ -1,7 +1,10 @@
 {% extends 'website/base.html' %}
 {% load static %}
 {% block head %}
+
+<!-- LOGIC DEPENDANT STYLING -->
 {% if "default" in latest_post.image.url %}
+    <!-- Inline styling used here to allow python logic to dictate what styling is used on this page -->
     <style>
         #news-primary {
             color: #fff;

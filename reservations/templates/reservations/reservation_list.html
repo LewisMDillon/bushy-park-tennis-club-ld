@@ -1,11 +1,12 @@
 {% extends 'website/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
+<!-- MASTER RESERVATION LIST -->
     <h1 class="m-4 text-center">Reservations</h1>
     
-
+    <!-- SEARCH BOXES -->
     <div class="my-5" id="reservation-search-container-outer">
-
+        <!-- DATE SEARCH -->
         <div class="mx-3" id="reservation-search-container-date">
             <p class="search-box-header">Search for reservations by date:</p>
             <p>Choose a date below and click search</p>
@@ -15,6 +16,7 @@
             </form>
         </div>
 
+        <!-- NAME SEARCH -->
         <div class="mx-3" id="reservation-search-container-name">
             <p class="search-box-header">Search for reservations by name:</p>
             <p>Enter the user's second name and click search</p>
@@ -26,7 +28,7 @@
 
     </div>
 
-    
+    <!-- RESERVATION TABLE -->
     <div id="reservation-table-container">
         <table class="table table-striped table-hover mx-5" id="reservation-table">
             <thead>
@@ -39,6 +41,7 @@
               </tr>
             </thead>
             <tbody>
+                <!-- AUTO-POPULATES THE TABLE -->
                 {% for reservation in reservations %}
                     <tr>
                         <th scope="row"><a href="{% url 'reservation-detail' reservation.id %}">View</a></th>
@@ -50,26 +53,5 @@
                 {% endfor %}
             </tbody>
           </table>
-    </div>
-
-    <div id="page-button-container">
-        {% if is_paginated %}
-        
-            {% if page_obj.has_previous %}
-                <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-            {% endif %}
-            {% for num in page_obj.paginator.page_range %}
-                {% if page_obj.number == num %}
-                    <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                    <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                {% endif %}
-            {% endfor %}
-            {% if page_obj.has_next %}
-                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-            {% endif %}
-        {% endif %}
     </div>
 {% endblock content %}

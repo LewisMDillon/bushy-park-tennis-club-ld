@@ -1,13 +1,14 @@
 {% extends 'website/base.html' %}
 
 {% block content %}
+<!-- CUSTOM 404 ERROR HANDLER PAGE -->
 <div class="wrap-error">
     <div class="d-flex align-items-center h-100">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 offset-sm-2 text-center">
                     <h1 class="error-number"><span>4</span><span>0</span><span>4</span></h1>
-                    <h2 class="">Oops! Page not found</h2>
+                    <h2 class="">Page not found</h2>
                     <h3 class="my-4">We are sorry, but the page you requested was not found</h3>
                     <p class="mb-4">Click the button below to return home</p>
                     <a class="btn green-button" href="{% url 'website-home' %}">Go home</a>

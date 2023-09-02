@@ -1,5 +1,6 @@
 {% extends 'website/base.html' %}
 {% block content %}
+<!-- RESERVATION DELETION CONFIRMATION PAGE -->
     <div class="mx-5 mt-5" id="reservation-delete-confirm-container">
         <form method="POST">
             {% csrf_token %}
@@ -9,7 +10,9 @@
                 <p><strong>Cancelling a reservation within 24hrs may incur a cancellation fee</strong></p>
             </fieldset>
             <div class="form-group">
+                <!-- DELETES THE RESERVATION -->
                 <button class="btn btn-danger" type="submit">Yes, cancel it</button>
+                <!-- RETURNS TO RESERVATION DETAILS PAGE -->
                 <a class="btn btn-secondary" href="{% url 'reservation-detail' object.id %}">No, go back</a>
             </div>
         </form>
