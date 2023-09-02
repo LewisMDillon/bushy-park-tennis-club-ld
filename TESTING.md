@@ -194,5 +194,25 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Password reset-done | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-password-reset-done.png) | No warnings |
 | Password reset-confirm | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-password-reset-confirm.png) | No warnings |
 | Password reset-complete | Desktop | ![screenshot](documentation/lighthouse/users/desktop/users-desktop-password-reset-complete.png) | No warnings |
-| x | x | x | repeat for any other tested pages/sizes |
+
+### Reservations App Templates - Mobile Testing
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Reservation List | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-list.png) | Some minor performance warnings |
+| Reservation User List | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-user-list.png) | Warning about link text (ignored as link is a Bootstrap button) |
+| Reservation Detail | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-detail.png) | Some minor performance warnings |
+| Rservation Confirm Delete | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-confirm-delete.png) | Some minor performance warnings |
+| Reservation Date | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-date.png) | Some minor performance warnings |
+| Reservation Form | Mobile | ![screenshot](documentation/lighthouse/reservations/mobile/reservations-mobile-form.png) | Some minor performance warnings |
+
+### Reservations App Templates - Desktop Testing
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Reservation List | Desktop | ![screenshot](documentation/lighthouse/reservations/desktop/reservations-desktop-list.png) | Minor performance warnings |
+| Reservation User List | Desktop | ![screenshot](documentation/lighthouse/reservations/desktop/reservations-desktop-user-list.png) | Warning about link text (ignored as link is a Bootstrap button) |
+| Reservation Detail | Desktop | ![screenshot](documentation/lighthouse/reservations/desktop/reservations-desktop-detail.png) | No warnings |
+| Rservation Confirm Delete | Desktop | ![screenshot](documentation/lighthouse/reservations/desktop/reservations-desktop-confirm-delete.png) | No warnings |
+| Reservation Date | Desktop | ![screenshot](documentation/lighthouse/reservations/desktop/reservations-desktop-date.png) | No warnings |
+| Reservation Form | Desktop | ![screenshot](documentation/lighthouse/reservations/desktop/reservations-desktop-form.png) | No warnings |
+
 
